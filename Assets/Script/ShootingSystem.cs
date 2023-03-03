@@ -21,15 +21,15 @@ public class ShootingSystem : MonoBehaviour
     public void Shooting()
     {
         GameObject bullet = Instantiate(bulletPrefabs, transform.position, transform.rotation);
-        
+
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 100))
         {
             if (hit.collider.gameObject.tag == "Enemy")
             {
-
-                Destroy(hit.collider.gameObject, 10f);
+                
+                Destroy(hit.collider.gameObject, 3f);
                 Destroy(bullet);
             }
         }
