@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Wall
+  - Ammo
+  - Shield
+  - Astronaut
   layers:
   - Default
   - TransparentFX

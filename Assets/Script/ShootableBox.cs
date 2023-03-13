@@ -6,8 +6,9 @@ public class ShootableBox : MonoBehaviour
 {
     //The box's current health point total
     public int currentHealth = 3;
+    public GameObject fire;
 
-    public void Damage(int damageAmount)
+    public void DamageBullet(int damageAmount)
     {
         //subtract damage amount when Damage function is called
         currentHealth -= damageAmount;
@@ -15,8 +16,10 @@ public class ShootableBox : MonoBehaviour
         //Check if health has fallen below zero
         if (currentHealth <= 0)
         {
-            //if health has fallen below zero, deactivate it 
-            gameObject.SetActive(false);
+            Destroy(gameObject);
+            GameObject a= Instantiate(fire, transform.position, Quaternion.identity);
+            Destroy(a, 2f);
+
         }
     }
 }
