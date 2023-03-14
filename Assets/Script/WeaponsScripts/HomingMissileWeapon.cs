@@ -11,7 +11,7 @@ public class HomingMissileWeapon : Weapon
 
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInventory.instance.ammoSecondWeapon > 0)
+        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.ammoSecondWeapon > 0)
         {
 
             Shooting();
@@ -35,7 +35,7 @@ public class HomingMissileWeapon : Weapon
 
     protected override void CountAmmo()
     {
-        PlayerInventory.instance.ammoSecondWeapon -= ammoCost;
+        PlayerInformation.instance.ammoSecondWeapon -= ammoCost;
     }
 
 }

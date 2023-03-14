@@ -19,7 +19,7 @@ public abstract class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(Constants.ENEMY))
         {
-            collision.transform.GetComponent<ShootableBox>().DamageBullet(damage);
+            collision.transform.GetComponent<EnemyBase>().DamageBullet(damage);
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag(Constants.WALL))

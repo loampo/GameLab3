@@ -9,7 +9,7 @@ public class OneLaserWeapon : Weapon
 
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInventory.instance.ammoFirstWeapon > 0)
+        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.ammoFirstWeapon > 0)
         {
             Shooting();
             CountAmmo();
@@ -32,7 +32,7 @@ public class OneLaserWeapon : Weapon
 
     protected override void CountAmmo()
     {
-        PlayerInventory.instance.ammoFirstWeapon -= ammoCost;
+        PlayerInformation.instance.ammoFirstWeapon -= ammoCost;
     }
 
 

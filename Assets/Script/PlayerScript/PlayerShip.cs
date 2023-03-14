@@ -2,16 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSubmarine : MonoBehaviour
+public class PlayerShip : MonoBehaviour
 {
-    public float forwardSpeed = 10f;
-    public float sidewaysSpeed = 5f;
+    public CursorLockMode cursorLockMode = CursorLockMode.Locked;
+    public bool cursorVisible = false;
+    public float forwardSpeed = 30f;
+    public float sidewaysSpeed = 50f;
     public float rotationSpeed = 100f;
     public float verticalSpeed = 5f;
+    public float maxSpeed = 80f;
 
     private Rigidbody rb;
     private bool invertMouse = false;
 
+    private void Awake()
+    {
+        Cursor.lockState = cursorLockMode;
+        Cursor.visible = cursorVisible;
+    }
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,7 +28,7 @@ public class PlayerSubmarine : MonoBehaviour
     void Update()
     {
         //Max Speed
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, 50f);
+        //rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         // Move forward/backward
         float forwardInput = Input.GetAxis("Vertical");

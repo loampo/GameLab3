@@ -6,9 +6,12 @@ TagManager:
   tags:
   - Enemy
   - Wall
-  - Ammo
   - Shield
   - Astronaut
+  - AmmoFW
+  - AmmoSW
+  - OneLaserWeapon
+  - HomingMissleWeapon
   layers:
   - Default
   - TransparentFX

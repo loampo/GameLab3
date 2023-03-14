@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootableBox : MonoBehaviour
+public class EnemyBase : MonoBehaviour
 {
     //The box's current health point total
-    public int currentHealth = 3;
+    public int currentHealth;
     public GameObject fire;
+    public int enemyScorePoints;
 
     public void DamageBullet(int damageAmount)
     {
@@ -19,6 +20,8 @@ public class ShootableBox : MonoBehaviour
             Destroy(gameObject);
             GameObject a= Instantiate(fire, transform.position, Quaternion.identity);
             Destroy(a, 2f);
+            GameManager.instance.score += enemyScorePoints;
+
 
         }
     }

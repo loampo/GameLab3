@@ -1,24 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
+    public int score=0;
+    public int astronautScorePoints;
+
+    
+
+    [SerializeField] private TextMeshProUGUI ScoreText;
 
 
+    public static GameManager instance;
 
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void Awake()
     {
-        if (other.transform.CompareTag(Constants.AMMO))
-        {
-            Destroy(other.gameObject);
-            
-        }
-        if (other.transform.CompareTag(Constants.SHIELD))
-        {
-            Destroy(other.gameObject);
- 
-        }
+
+        //Controllo in più
+        if (instance == null)
+            instance = this;
+
     }
+
+    private void Update()
+    {
+       ScoreText.text = score.ToString();
+    }
+
+
+
 }

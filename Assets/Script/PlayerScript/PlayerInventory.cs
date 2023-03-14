@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 
 public class PlayerInventory : MonoBehaviour
 {
+    bool laserWeapon;
+    bool oneLaserWeapon;
+    bool missleWeapon;
+    bool homingMissleWeapon;
 
-    [SerializeField] private TextMeshProUGUI AmmoCountFirstWeapon;
-    [SerializeField] private TextMeshProUGUI AmmoCountSecondWeapon;
-
-    [Range(1f, 100f)]
-    public int ammoFirstWeapon;
-    [Range(1f, 20f)]
-    public int ammoSecondWeapon;
+    
     public Transform gunEndPrimaryHand;
     public Transform gunEndSecondaryHand;
     public List<GameObject> Weapons = new List<GameObject>();
@@ -23,45 +21,43 @@ public class PlayerInventory : MonoBehaviour
     
 
 
-    public static PlayerInventory instance;
+    
 
    
 
     private void Awake()
     {
-        Instantiate(Weapons[0],gunEndPrimaryHand);
-        //Controllo in più
-        if (instance == null)
-            instance = this;
+        laserWeapon = true;
+        missleWeapon = true;
+        Instantiate(Weapons[0],gunEndPrimaryHand);     
         Instantiate(Weapons[2], gunEndSecondaryHand);
     }
 
     private void Update()
     {
-        AmmoCountFirstWeapon.text =ammoFirstWeapon.ToString();
-        AmmoCountSecondWeapon.text = ammoSecondWeapon.ToString();
+       
         SwitchWeapon();
 
     }
 
     private void SwitchWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1)&&laserWeapon)
         {
             if (m_weaponToEquip != WeaponType.laserWeapon) m_weaponToEquip = WeaponType.laserWeapon;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2)&&oneLaserWeapon)
         {
             if (m_weaponToEquip != WeaponType.oneLaserWeapon) m_weaponToEquip = WeaponType.oneLaserWeapon;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3)&&missleWeapon)
         {
             if (m_weaponToEquip != WeaponType.missleWeapon) m_weaponToEquip = WeaponType.missleWeapon;
 
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4)&&homingMissleWeapon)
         {
             if (m_weaponToEquip != WeaponType.HomingMissileWeapon) m_weaponToEquip = WeaponType.HomingMissileWeapon;
 
@@ -96,6 +92,27 @@ public class PlayerInventory : MonoBehaviour
         HomingMissileWeapon,
     }
 
+
+
+    public void OnTriggerEnter(Collider collider)
+    {
+        CollisionDetection(collider);
+    }
+
+    protected virtual void CollisionDetection(Collider collider)
+    {
+        if (collider.gameObject.CompareTag(Constants.ONELW))
+        {
+            Destroy(collider.gameObject);
+            oneLaserWeapon = true;
+        }
+        if (collider.gameObject.CompareTag(Constants.HOMINGMW))
+        {
+            Destroy(collider.gameObject);
+            homingMissleWeapon = true;
+        }
+
+    }
 
 
 }
