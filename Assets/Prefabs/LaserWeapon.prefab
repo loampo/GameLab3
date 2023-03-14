@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 5312526106282597808}
   - component: {fileID: 6481595319884729337}
   m_Layer: 0
-  m_Name: FirstWeapon
+  m_Name: LaserWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

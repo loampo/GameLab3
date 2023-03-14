@@ -8,11 +8,16 @@ public class PlayerInventory : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI AmmoCountFirstWeapon;
     [SerializeField] private TextMeshProUGUI AmmoCountSecondWeapon;
-    public int ammoFirstWeapon = 100;
-    public int ammoSecondWeapon = 100;
+
+    [Range(1f, 100f)]
+    public int ammoFirstWeapon;
+    [Range(1f, 20f)]
+    public int ammoSecondWeapon;
+
     public GameObject firstWeapon;
     public GameObject secondWeapon;
     public Transform gunEnd;
+
     public List<GameObject> Weapons = new List<GameObject>();
 
     public static PlayerInventory instance;

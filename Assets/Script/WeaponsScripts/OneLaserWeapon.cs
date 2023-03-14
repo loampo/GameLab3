@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecondaryWeapon : Weapon
+public class OneLaserWeapon : Weapon
 {
     public Transform gunEnd;
 
 
-
-
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInventory.instance.ammoSecondWeapon > 0)
+        if (Input.GetKey(keyCode) && readyToShoot && PlayerInventory.instance.ammoFirstWeapon > 0)
         {
             Shooting();
             CountAmmo();
@@ -32,10 +30,10 @@ public class SecondaryWeapon : Weapon
 
     }
 
-
     protected override void CountAmmo()
     {
-        PlayerInventory.instance.ammoSecondWeapon -= ammoCost;
+        PlayerInventory.instance.ammoFirstWeapon -= ammoCost;
     }
+
 
 }

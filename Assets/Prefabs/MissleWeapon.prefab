@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3230861190706915083}
   - component: {fileID: 5426985559590082021}
   m_Layer: 0
-  m_Name: SecondWeapon
+  m_Name: MissleWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   ammoCost: 1
-  bulletPrefabs: {fileID: 4411491088418869557, guid: 9eca37eb68ae99647b8397afd52c41aa, type: 3}
+  bulletPrefabs: {fileID: 8704220407862725328, guid: 580bb1cbaafc8874bba2d265dd43bdc0, type: 3}
   speedX: 30
   keyCode: 324
   gunEnd: {fileID: 3024450222571527035}
