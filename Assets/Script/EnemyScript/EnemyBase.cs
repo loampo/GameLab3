@@ -9,6 +9,26 @@ public class EnemyBase : MonoBehaviour
     public GameObject fire;
     public int enemyScorePoints;
 
+
+
+
+
+
+
+
+
+    private void OnBecameVisible()
+    {
+        gameObject.layer = 3;
+
+    }
+
+    private void OnBecameInvisible()
+    {
+        gameObject.layer = 0;
+    }
+
+
     public void DamageBullet(int damageAmount)
     {
         //subtract damage amount when Damage function is called

@@ -16,7 +16,7 @@ public class PlayerInventory : MonoBehaviour
     public List<GameObject> Weapons = new List<GameObject>();
 
 
-    private WeaponType m_weaponToEquip;
+    private WeaponType m_weaponEquipable;
     private WeaponType m_lastEquipedWeapon;
     
 
@@ -44,26 +44,26 @@ public class PlayerInventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)&&laserWeapon)
         {
-            if (m_weaponToEquip != WeaponType.laserWeapon) m_weaponToEquip = WeaponType.laserWeapon;
+            if (m_weaponEquipable != WeaponType.laserWeapon) m_weaponEquipable = WeaponType.laserWeapon;
 
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2)&&oneLaserWeapon)
         {
-            if (m_weaponToEquip != WeaponType.oneLaserWeapon) m_weaponToEquip = WeaponType.oneLaserWeapon;
+            if (m_weaponEquipable != WeaponType.oneLaserWeapon) m_weaponEquipable = WeaponType.oneLaserWeapon;
 
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3)&&missleWeapon)
         {
-            if (m_weaponToEquip != WeaponType.missleWeapon) m_weaponToEquip = WeaponType.missleWeapon;
+            if (m_weaponEquipable != WeaponType.missleWeapon) m_weaponEquipable = WeaponType.missleWeapon;
 
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4)&&homingMissleWeapon)
         {
-            if (m_weaponToEquip != WeaponType.HomingMissileWeapon) m_weaponToEquip = WeaponType.HomingMissileWeapon;
+            if (m_weaponEquipable != WeaponType.HomingMissileWeapon) m_weaponEquipable = WeaponType.HomingMissileWeapon;
 
         }
 
-        if (m_weaponToEquip != m_lastEquipedWeapon) EquipWeapon(m_weaponToEquip);
+        if (m_weaponEquipable != m_lastEquipedWeapon) EquipWeapon(m_weaponEquipable);
 
     }
 

@@ -76,11 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 1
   ammoCost: 1
-  bulletPrefabs: {fileID: 5265074257239742141, guid: 791962cc94b789642b8a2f3373f2af03, type: 3}
+  bulletPrefabs: {fileID: 5501603037502310440, guid: 791962cc94b789642b8a2f3373f2af03, type: 3}
   speedX: 10
   keyCode: 324
   gunEnd: {fileID: 3209157810487198674}
-  m_MaxDistance: 13
-  m_Speed: 3.46
-  radius: {x: 10, y: 5.93, z: 10.7}
-  position: {x: 0, y: 2.44, z: 0}

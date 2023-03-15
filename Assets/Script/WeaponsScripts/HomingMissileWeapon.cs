@@ -25,8 +25,7 @@ public class HomingMissileWeapon : Weapon
     protected override void Shooting()
     {
         base.Shooting();
-        GameObject bullet = Instantiate(bulletPrefabs, gunEnd.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedX;
+        GameObject bullet = Instantiate(bulletPrefabs, gunEnd.position,transform.rotation);
         Invoke("ResetShooting", fireRate);
 
     }
