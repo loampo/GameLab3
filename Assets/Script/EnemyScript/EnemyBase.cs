@@ -23,6 +23,7 @@ public class EnemyBase : MonoBehaviour
 
     }
 
+
     private void OnBecameInvisible()
     {
         gameObject.layer = 0;

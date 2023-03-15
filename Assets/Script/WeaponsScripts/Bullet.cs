@@ -13,6 +13,7 @@ public abstract class Bullet : MonoBehaviour
 
         CollisionDetection(collision);
 
+
     }
 
     protected virtual void CollisionDetection(Collision collision)
