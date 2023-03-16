@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
     //The box's current health point total
     public int currentHealth;
@@ -30,7 +30,7 @@ public class EnemyBase : MonoBehaviour
     }
 
 
-    public void DamageBullet(int damageAmount)
+   public virtual void DamageBullet(int damageAmount)
     {
         //subtract damage amount when Damage function is called
         currentHealth -= damageAmount;
