@@ -21,7 +21,7 @@ public class PlayerShip : MonoBehaviour
     void Update()
     {
         //Max Speed
-        //rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
+        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
 
         // Move forward/backward
         float forwardInput = Input.GetAxis("Vertical");
