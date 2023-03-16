@@ -336,13 +336,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1730242790, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
+      propertyPath: far clip plane
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6559318469764854440, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
       propertyPath: m_Name
       value: FintoPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 6559318469764854441, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
+      propertyPath: maxSpeed
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559318469764854441, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
+      propertyPath: forwardSpeed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559318469764854441, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
       propertyPath: rotationSpeed
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559318469764854441, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
+      propertyPath: sidewaysSpeed
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6559318469764854441, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
+      propertyPath: verticalSpeed
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6559318469764854445, guid: 8477ce7dc2727af4a8b8e7310a3de9d6, type: 3}
       propertyPath: m_RootOrder

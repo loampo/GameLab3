@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerShip : MonoBehaviour
 {
-    public float forwardSpeed = 30f;
-    public float sidewaysSpeed = 50f;
+    public float forwardSpeed = 100f;
+    public float sidewaysSpeed = 100f;
     public float rotationSpeed = 100f;
-    public float verticalSpeed = 5f;
-    public float maxSpeed = 80f;
+    public float verticalSpeed = 100f;
+    public float maxSpeed = 200f;
 
     private Rigidbody rb;
     private bool invertMouse = false;
@@ -16,6 +16,9 @@ public class PlayerShip : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        //Da spostare nella UI in futuro
+        Cursor.lockState = CursorLockMode.Confined; // Impedisce al cursore di uscire dallo schermo
+        Cursor.visible = false; // Nasconde il cursore del mouse
     }
 
     void Update()
@@ -27,7 +30,7 @@ public class PlayerShip : MonoBehaviour
         float forwardInput = Input.GetAxis("Vertical");
         float sidewaysInput = Input.GetAxis("Horizontal");
         Vector3 forwardDirection = transform.forward;
-        Vector3 moveDirection = forwardDirection * forwardInput * forwardSpeed;
+        Vector3 moveDirection = forwardDirection * forwardInput * forwardSpeed * Time.deltaTime;
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
         {
             rb.AddForce(moveDirection);
@@ -35,7 +38,7 @@ public class PlayerShip : MonoBehaviour
 
         // Move sideways
         Vector3 sidewaysDirection = transform.right;
-        Vector3 moveSideways = sidewaysDirection * sidewaysInput * sidewaysSpeed;
+        Vector3 moveSideways = sidewaysDirection * sidewaysInput * sidewaysSpeed * Time.deltaTime;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             rb.AddForce(moveSideways);
@@ -52,7 +55,7 @@ public class PlayerShip : MonoBehaviour
             verticalInput -= 1f;
         }
         Vector3 verticalDirection = transform.up;
-        Vector3 moveVertical = verticalDirection * verticalInput * verticalSpeed;
+        Vector3 moveVertical = verticalDirection * verticalInput * verticalSpeed * Time.deltaTime;
         rb.AddForce(moveVertical);
 
         // Mouse view
