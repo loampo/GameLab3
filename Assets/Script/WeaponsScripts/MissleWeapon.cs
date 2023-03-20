@@ -11,7 +11,7 @@ public class MissleWeapon : Weapon
 
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.ammoSecondWeapon > 0)
+        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.m_ammoMissle > 0)
         {
             Shooting();
             CountAmmo();
@@ -36,7 +36,7 @@ public class MissleWeapon : Weapon
 
     protected override void CountAmmo()
     {
-        PlayerInformation.instance.ammoSecondWeapon -= ammoCost;
+        PlayerInformation.instance.m_ammoMissle -= ammoCost;
     }
 
 }

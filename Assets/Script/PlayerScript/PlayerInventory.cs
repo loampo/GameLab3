@@ -7,8 +7,8 @@ public class PlayerInventory : MonoBehaviour
 {
     bool laserWeapon;
     bool oneLaserWeapon;
-    bool missleWeapon;
-    bool homingMissleWeapon;
+    
+    
 
     
     public Transform gunEndPrimaryHand;
@@ -28,7 +28,6 @@ public class PlayerInventory : MonoBehaviour
     private void Awake()
     {
         laserWeapon = true;
-        missleWeapon = true;
         Instantiate(Weapons[0],gunEndPrimaryHand);     
         Instantiate(Weapons[2], gunEndSecondaryHand);
     }
@@ -45,21 +44,22 @@ public class PlayerInventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1)&&laserWeapon)
         {
             if (m_weaponEquipable != WeaponType.laserWeapon) m_weaponEquipable = WeaponType.laserWeapon;
-
+            PlayerInformation.instance.SwitchAmmoFromVulcanToLaser();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2)&&oneLaserWeapon)
         {
             if (m_weaponEquipable != WeaponType.oneLaserWeapon) m_weaponEquipable = WeaponType.oneLaserWeapon;
-
+            PlayerInformation.instance.SwitchAmmoFromLaserToVulcan();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3)&&missleWeapon)
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             if (m_weaponEquipable != WeaponType.missleWeapon) m_weaponEquipable = WeaponType.missleWeapon;
-
+            PlayerInformation.instance.SwitchAmmoFromHomingMissleToMissle();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4)&&homingMissleWeapon)
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             if (m_weaponEquipable != WeaponType.HomingMissileWeapon) m_weaponEquipable = WeaponType.HomingMissileWeapon;
+            PlayerInformation.instance.SwitchAmmoFromMissleToHomingMissle();
 
         }
 
@@ -106,11 +106,7 @@ public class PlayerInventory : MonoBehaviour
             Destroy(collider.gameObject);
             oneLaserWeapon = true;
         }
-        if (collider.gameObject.CompareTag(Constants.HOMINGMW))
-        {
-            Destroy(collider.gameObject);
-            homingMissleWeapon = true;
-        }
+       
 
     }
 

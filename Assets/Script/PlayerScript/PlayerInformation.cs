@@ -4,32 +4,57 @@ using UnityEngine;
 using TMPro;
 public class PlayerInformation : MonoBehaviour
 {
+
+
     [Range(1f, 100f)]
-    public int healt;
+    public int m_healt;
     [Range(1f, 200f)]
-    public int maxHealt;
-
-    
+    public int m_maxHealt;
     [Range(1f, 100f)]
-    public int ammoFirstWeapon;
+    public int m_ammoLaser;
     [Range(1f, 200f)]
-    public int maxAmmoFirstWeapon;
+    public int m_maxAmmoLaser;
+    [Range(1f, 9999f)]
+    public int m_ammoVulcan;
+    [Range(1f, 9999f)]
+    public int m_maxAmmoVulcan;
     [Range(1f, 20f)]
-    public int ammoSecondWeapon;
+    public int m_ammoMissle;
     [Range(1f, 20f)]
-    public int maxAmmoSecondWeapon;
+    public int m_maxAmmoMissle;
+    [Range(1f, 20f)]
+    public int m_ammoHomingMissle;
+    [Range(1f, 20f)]
+    public int m_maxAmmoHomingMissle;
 
+
+    //----------------------------------------------------------Collectible Attributs
     [Range(1f, 20f)]
-    public int restoreHP;
+    public int m_restoreHP;
     [Range(1f, 20f)]
-    public int restoreAmmoFirstWeapon;
+    public int m_restoreAmmoLaser;
     [Range(1f, 20f)]
-    public int restoreAmmoSecondWeapon;
+    public int m_restoreAmmoVulcan;
+    [Range(1f, 20f)]
+    public int m_restoreAmmoMissle;
+    [Range(1f, 20f)]
+    public int m_restoreAmmoHomingMissle;
+    bool m_AmmoLaserCollectible;
+    bool m_AmmoMissleCollectible;
 
 
-    [SerializeField] private TextMeshProUGUI AmmoCountFirstWeapon;
-    [SerializeField] private TextMeshProUGUI AmmoCountSecondWeapon;
-    [SerializeField] private TextMeshProUGUI HealtCount;
+    //----------------------------------------------------------Text for the ammo
+    [SerializeField] private TextMeshProUGUI m_AmmoCountLaser;
+    [SerializeField] private TextMeshProUGUI m_AmmoCounVulcan;
+    [SerializeField] private TextMeshProUGUI m_AmmoCountMissle;
+    [SerializeField] private TextMeshProUGUI m_AmmoCountHomingMissle;
+    [SerializeField] private TextMeshProUGUI m_HealtCount;
+
+    //----------------------------------------------------------Canvas GameObject for activated Functions
+    public GameObject AmmoLaserActivate;
+    public GameObject AmmoVulcanActivate;
+    public GameObject AmmoMissleActivate;
+    public GameObject AmmoHomingMissleActivate;
 
 
     public static PlayerInformation instance;
@@ -37,7 +62,12 @@ public class PlayerInformation : MonoBehaviour
 
     private void Awake()
     {
-        
+        m_AmmoLaserCollectible = true;
+        AmmoLaserActivate.SetActive(true);
+        m_AmmoMissleCollectible = true;
+        AmmoMissleActivate.SetActive(true);
+        AmmoHomingMissleActivate.SetActive(false);
+        AmmoVulcanActivate.SetActive(false);
         //Controllo in più
         if (instance == null)
             instance = this;
@@ -45,9 +75,13 @@ public class PlayerInformation : MonoBehaviour
     }
     private void Update()
     {
-        AmmoCountFirstWeapon.text = ammoFirstWeapon.ToString();
-        AmmoCountSecondWeapon.text = ammoSecondWeapon.ToString();
-        HealtCount.text = healt.ToString();
+
+        m_AmmoCountLaser.text = m_ammoLaser.ToString();
+        m_AmmoCountMissle.text = m_ammoMissle.ToString();
+        m_AmmoCountHomingMissle.text = m_ammoHomingMissle.ToString();
+        m_AmmoCounVulcan.text = m_ammoVulcan.ToString();
+        m_HealtCount.text = m_healt.ToString();
+        
 
     }
 
@@ -60,33 +94,71 @@ public class PlayerInformation : MonoBehaviour
     {
         if (collider.gameObject.CompareTag(Constants.AMMOFW))
         {
-            if (ammoFirstWeapon >= maxAmmoFirstWeapon) Destroy(collider.gameObject);
-            else
+            if (m_AmmoLaserCollectible)
             {
-                Destroy(collider.gameObject);
-                ammoFirstWeapon += restoreAmmoFirstWeapon;
+                if (m_ammoLaser >= m_maxAmmoLaser)
+                {
+                    Destroy(collider.gameObject);
+                }
+                else
+                {
+                    Destroy(collider.gameObject);
+                    m_ammoLaser += m_restoreAmmoLaser;
+                }
             }
-            
+            else if (!m_AmmoLaserCollectible)
+            {
+                if (m_ammoVulcan >= m_maxAmmoVulcan)
+                {
+                    Destroy(collider.gameObject);
+                }
+                else
+                {
+                    Destroy(collider.gameObject);
+                    m_ammoVulcan += m_restoreAmmoVulcan;
+                }
+            }
 
         }
         if (collider.gameObject.CompareTag(Constants.AMMOSW))
         {
-            if (ammoSecondWeapon >= maxAmmoSecondWeapon) Destroy(collider.gameObject);
-            else
+            if (m_AmmoMissleCollectible)
             {
-                Destroy(collider.gameObject);
-                ammoSecondWeapon += restoreAmmoSecondWeapon;
+                if (m_ammoMissle >= m_maxAmmoMissle)
+                {
+                    Destroy(collider.gameObject);
+                }
+                else
+                {
+                    Destroy(collider.gameObject);
+                    m_ammoMissle += m_restoreAmmoMissle;
+                }
             }
+            else if (!m_AmmoMissleCollectible)
+            {
+                if (m_ammoHomingMissle >= m_maxAmmoHomingMissle)
+                {
+                    Destroy(collider.gameObject);
+                }
+                else
+                {
+                    Destroy(collider.gameObject);
+                    m_ammoHomingMissle += m_restoreAmmoHomingMissle;
+                }
+            }
+            
             
 
         }
+
+
         if (collider.gameObject.CompareTag(Constants.SHIELD))
         {
-            if (healt >= maxHealt) Destroy(collider.gameObject);
+            if (m_healt >= m_maxHealt) Destroy(collider.gameObject);
             else
             {
                 Destroy(collider.gameObject);
-                healt += restoreHP;
+                m_healt += m_restoreHP;
             }
             
 
@@ -101,6 +173,32 @@ public class PlayerInformation : MonoBehaviour
 
     }
 
+    public void SwitchAmmoFromLaserToVulcan()
+    {
+        AmmoLaserActivate.SetActive(false);
+        AmmoVulcanActivate.SetActive(true);
+        m_AmmoLaserCollectible = false;
+    }
 
+    public void SwitchAmmoFromVulcanToLaser()
+    {
+        AmmoLaserActivate.SetActive(true);
+        AmmoVulcanActivate.SetActive(false);
+        m_AmmoLaserCollectible = true;
+    }
+
+    public void SwitchAmmoFromMissleToHomingMissle()
+    {
+        AmmoMissleActivate.SetActive(false);
+        AmmoHomingMissleActivate.SetActive(true);
+        m_AmmoMissleCollectible = false;
+    }
+
+    public void SwitchAmmoFromHomingMissleToMissle()
+    {
+        AmmoMissleActivate.SetActive(true);
+        AmmoHomingMissleActivate.SetActive(false);
+        m_AmmoMissleCollectible = true;
+    }
 
 }

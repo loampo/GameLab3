@@ -13,7 +13,7 @@ public class LaserWeapon : Weapon
 
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.ammoFirstWeapon > 0)
+        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.m_ammoLaser > 0)
         {
             Shooting();
             CountAmmo();
@@ -38,7 +38,7 @@ public class LaserWeapon : Weapon
 
     protected override void CountAmmo()
     {
-        PlayerInformation.instance.ammoFirstWeapon -= ammoCost;
+        PlayerInformation.instance.m_ammoLaser -= ammoCost;
     }
 
 

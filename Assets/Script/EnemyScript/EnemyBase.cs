@@ -9,12 +9,7 @@ public abstract class EnemyBase : MonoBehaviour
     public GameObject fire;
     public int enemyScorePoints;
 
-
-
-
-
-
-
+   
 
 
     private void OnBecameVisible()
