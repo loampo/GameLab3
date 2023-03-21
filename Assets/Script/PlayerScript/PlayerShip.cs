@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerShip : MonoBehaviour
 {
+    public CursorLockMode cursorLockMode = CursorLockMode.Locked;
+    public bool cursorVisible = false;
     public float forwardSpeed = 100f;
     public float sidewaysSpeed = 100f;
     public float rotationSpeed = 100f;
@@ -12,13 +14,18 @@ public class PlayerShip : MonoBehaviour
 
     private Rigidbody rb;
     private bool invertMouse = false;
+    private void Awake()
+    {
+        //Da spostare nella UI in futuro
+        Cursor.lockState = cursorLockMode; //Impedisce al cursore di uscire dallo schermo
+        Cursor.visible = cursorVisible; // Nasconde il cursore del mouse
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        //Da spostare nella UI in futuro
-        Cursor.lockState = CursorLockMode.Confined; // Impedisce al cursore di uscire dallo schermo
-        Cursor.visible = false; // Nasconde il cursore del mouse
+        
+       
     }
 
     void Update()

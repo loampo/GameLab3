@@ -2989,6 +2989,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7624438802357227691, guid: 890e2c9d7d5a8ab4fbb581bf2a4daede, type: 3}
+      propertyPath: maxSpeed
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624438802357227691, guid: 890e2c9d7d5a8ab4fbb581bf2a4daede, type: 3}
+      propertyPath: forwardSpeed
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624438802357227691, guid: 890e2c9d7d5a8ab4fbb581bf2a4daede, type: 3}
+      propertyPath: rotationSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624438802357227691, guid: 890e2c9d7d5a8ab4fbb581bf2a4daede, type: 3}
+      propertyPath: sidewaysSpeed
+      value: 2500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624438802357227691, guid: 890e2c9d7d5a8ab4fbb581bf2a4daede, type: 3}
+      propertyPath: verticalSpeed
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 7624438802357227695, guid: 890e2c9d7d5a8ab4fbb581bf2a4daede, type: 3}
       propertyPath: m_RootOrder
       value: 2
