@@ -201,4 +201,19 @@ public class PlayerInformation : MonoBehaviour
         m_AmmoMissleCollectible = true;
     }
 
+
+    public void Damage(int damageAmount)
+    {
+        m_healt -= damageAmount;
+
+        //Check if health has fallen below zero
+        if (m_healt <= 0)
+        {
+            Destroy(gameObject);
+
+        }
+
+    }
+
+
 }

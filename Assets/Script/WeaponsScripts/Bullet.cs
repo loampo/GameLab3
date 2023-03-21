@@ -16,20 +16,8 @@ public abstract class Bullet : MonoBehaviour
 
     }
 
-    protected virtual void CollisionDetection(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(Constants.ENEMY))
-        {
-            collision.transform.GetComponent<EnemyBase>().DamageBullet(damage);
-            Destroy(gameObject);
-        }
-        if (collision.gameObject.CompareTag(Constants.WALL))
-        {
-            Destroy(gameObject);
-
-        }
-
-    }
+    protected abstract void CollisionDetection(Collision collision);
+    
 
 
     protected abstract void ColorBullet();

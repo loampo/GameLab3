@@ -101,7 +101,7 @@ public class PlayerInventory : MonoBehaviour
 
     protected virtual void CollisionDetection(Collider collider)
     {
-        if (collider.gameObject.CompareTag(Constants.ONELW))
+        if (collider.gameObject.CompareTag(Constants.VULCAN))
         {
             Destroy(collider.gameObject);
             oneLaserWeapon = true;

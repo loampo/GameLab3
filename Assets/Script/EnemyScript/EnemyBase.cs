@@ -8,8 +8,9 @@ public abstract class EnemyBase : MonoBehaviour
     public int currentHealth;
     public GameObject fire;
     public int enemyScorePoints;
-
-   
+    public float maxDistance;
+    protected EnemyWeapon enemyWeapon;
+    public Transform Player;
 
 
     private void OnBecameVisible()
@@ -24,8 +25,12 @@ public abstract class EnemyBase : MonoBehaviour
         gameObject.layer = 0;
     }
 
+    private void Awake()
+    {
+        enemyWeapon = GetComponent<EnemyWeapon>();
+    }
 
-   public virtual void DamageBullet(int damageAmount)
+    public virtual void DamageBullet(int damageAmount)
     {
         //subtract damage amount when Damage function is called
         currentHealth -= damageAmount;

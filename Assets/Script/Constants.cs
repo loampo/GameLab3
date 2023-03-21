@@ -7,13 +7,14 @@ public class Constants
     //for the bullets
     public const string ENEMY = "Enemy";
     public const string WALL = "Wall";
+    public const string PLAYER = "Player";
     //for the collectible
     public const string AMMOFW = "AmmoFW";
     public const string AMMOSW = "AmmoSW";
     public const string SHIELD = "Shield";
     public const string ASTRONAUT = "Astronaut";
     //for the weapons
-    public const string ONELW = "OneLaserWeapon";
-    public const string HOMINGMW = "HomingMissleWeapon";
+    public const string VULCAN = "Vulcan";
+    
    
 }

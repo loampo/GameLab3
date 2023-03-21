@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class RedEnemy : EnemyBase
 {
-    public Transform Player;
+    
     public Transform PatrolRoute;
     public List<Transform> Locations;
     private int locationIndex = 0;
@@ -14,7 +14,7 @@ public class RedEnemy : EnemyBase
     private Vector3 offset2 = new Vector3(0f, 5f, 0f);
     
     
-    public float maxDistance;
+    
     //public float maxRotate;
 
     public float speedUpDown = 1;
@@ -48,7 +48,7 @@ public class RedEnemy : EnemyBase
             transform.LookAt(Player);
             agent.destination = playerPosition;
             //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
-            
+            enemyWeapon.Shooting();
             
 
 

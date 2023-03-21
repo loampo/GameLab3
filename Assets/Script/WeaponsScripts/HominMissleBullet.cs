@@ -76,9 +76,22 @@ public class HominMissleBullet : Bullet
         transform.rotation = Quaternion.LookRotation(newDirection);
 
     }
-    
-    
 
+
+    protected override void CollisionDetection(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(Constants.ENEMY))
+        {
+            collision.transform.GetComponent<EnemyBase>().DamageBullet(damage);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag(Constants.WALL))
+        {
+            Destroy(gameObject);
+
+        }
+
+    }
 
 
     protected override void ColorBullet()

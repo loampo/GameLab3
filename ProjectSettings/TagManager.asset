@@ -10,8 +10,7 @@ TagManager:
   - Astronaut
   - AmmoFW
   - AmmoSW
-  - OneLaserWeapon
-  - HomingMissleWeapon
+  - Vulcan
   layers:
   - Default
   - TransparentFX
