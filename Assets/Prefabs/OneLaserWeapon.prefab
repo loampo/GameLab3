@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f687e31319774f840b4b24ccee31e602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.3
-  ammoCost: 1
-  bulletPrefabs: {fileID: 7232424895062767313, guid: d17b7b8468c07db4d9f46f159c1dffe4, type: 3}
-  speedX: 10
-  keyCode: 323
-  gunEnd: {fileID: 5149180766848383496}
+  m_fireRate: 0.25
+  m_ammoCost: 1
+  m_bulletPrefabs: {fileID: 7232424895062767313, guid: d17b7b8468c07db4d9f46f159c1dffe4, type: 3}
+  m_speedX: 15
+  m_keyCode: 323
+  m_gunEnd: {fileID: 5149180766848383496}

@@ -5,31 +5,23 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    bool laserWeapon;
-    bool oneLaserWeapon;
+    //------------------------------------------------------------Controll Weapon To Equip
+    bool m_LaserWeapon; //controll for the weapon to equip
+    bool m_Vulcan; //controll for the weapon to equip
+
+    public Transform m_gunEndPrimaryHand; //where i can equip my primary Weapon
+    public Transform m_gunEndSecondaryHand; //where i can equip my secondary Weapon
+    public List<GameObject> m_weapons = new List<GameObject>(); // all my qeapon 
+
+    private WeaponType m_WeaponEquipable;
+    private WeaponType m_LastEquipedWeapon;
     
-    
-
-    
-    public Transform gunEndPrimaryHand;
-    public Transform gunEndSecondaryHand;
-    public List<GameObject> Weapons = new List<GameObject>();
-
-
-    private WeaponType m_weaponEquipable;
-    private WeaponType m_lastEquipedWeapon;
-    
-
-
-    
-
-   
 
     private void Awake()
     {
-        laserWeapon = true;
-        Instantiate(Weapons[0],gunEndPrimaryHand);     
-        Instantiate(Weapons[2], gunEndSecondaryHand);
+        m_LaserWeapon = true;
+        Instantiate(m_weapons[0],m_gunEndPrimaryHand);     //Instantiate the laser weapon to the start
+        Instantiate(m_weapons[2], m_gunEndSecondaryHand); //Instantiate the missle weapon to the start 
     }
 
     private void Update()
@@ -41,45 +33,45 @@ public class PlayerInventory : MonoBehaviour
 
     private void SwitchWeapon()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)&&laserWeapon)
+        if (Input.GetKeyDown(KeyCode.Alpha1)&&m_LaserWeapon) // press 1 
         {
-            if (m_weaponEquipable != WeaponType.laserWeapon) m_weaponEquipable = WeaponType.laserWeapon;
-            PlayerInformation.instance.SwitchAmmoFromVulcanToLaser();
+            if (m_WeaponEquipable != WeaponType.laserWeapon) m_WeaponEquipable = WeaponType.laserWeapon; //control for the weapon to equip for the primary weapon 
+            PlayerInformation.m_instance.SwitchAmmoFromVulcanToLaser(); // switch canvas for the ammo
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2)&&oneLaserWeapon)
+        else if (Input.GetKeyDown(KeyCode.Alpha2)&&m_Vulcan)// press 2 
         {
-            if (m_weaponEquipable != WeaponType.oneLaserWeapon) m_weaponEquipable = WeaponType.oneLaserWeapon;
-            PlayerInformation.instance.SwitchAmmoFromLaserToVulcan();
+            if (m_WeaponEquipable != WeaponType.vulcan) m_WeaponEquipable = WeaponType.vulcan; //control for the weapon to equip for the primary weapon 
+            PlayerInformation.m_instance.SwitchAmmoFromLaserToVulcan();// switch canvas for the ammo
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))// press 3 
         {
-            if (m_weaponEquipable != WeaponType.missleWeapon) m_weaponEquipable = WeaponType.missleWeapon;
-            PlayerInformation.instance.SwitchAmmoFromHomingMissleToMissle();
+            if (m_WeaponEquipable != WeaponType.missleWeapon) m_WeaponEquipable = WeaponType.missleWeapon; //control for the weapon to equip for the secondary weapon 
+            PlayerInformation.m_instance.SwitchAmmoFromHomingMissleToMissle();// switch canvas for the ammo
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))// press 4 
         {
-            if (m_weaponEquipable != WeaponType.HomingMissileWeapon) m_weaponEquipable = WeaponType.HomingMissileWeapon;
-            PlayerInformation.instance.SwitchAmmoFromMissleToHomingMissle();
+            if (m_WeaponEquipable != WeaponType.homingMissileWeapon) m_WeaponEquipable = WeaponType.homingMissileWeapon; //control for the weapon to equip for the secondary weapon 
+            PlayerInformation.m_instance.SwitchAmmoFromMissleToHomingMissle();// switch canvas for the ammo
 
         }
 
-        if (m_weaponEquipable != m_lastEquipedWeapon) EquipWeapon(m_weaponEquipable);
+        if (m_WeaponEquipable != m_LastEquipedWeapon) EquipWeapon(m_WeaponEquipable);
 
     }
 
-    private void EquipWeapon(WeaponType weaponToEquip)
+    private void EquipWeapon(WeaponType weaponToEquip) // weapon can i equip
     {
-        if ((int)weaponToEquip < 2)
+        if ((int)weaponToEquip < 2) //primary weapon
         {
-            Destroy(gunEndPrimaryHand.GetComponentInChildren<Weapon>().gameObject);
-            Instantiate(Weapons[(int)weaponToEquip], gunEndPrimaryHand.transform);
+            Destroy(m_gunEndPrimaryHand.GetComponentInChildren<Weapon>().gameObject); //destroy current weapon 
+            Instantiate(m_weapons[(int)weaponToEquip], m_gunEndPrimaryHand.transform); // Instantiate the weapon next to it
         }
         else
         {
-            Destroy(gunEndSecondaryHand.GetComponentInChildren<Weapon>().gameObject);
-            Instantiate(Weapons[(int)weaponToEquip], gunEndSecondaryHand.transform);
+            Destroy(m_gunEndSecondaryHand.GetComponentInChildren<Weapon>().gameObject); //destroy current weapon 
+            Instantiate(m_weapons[(int)weaponToEquip], m_gunEndSecondaryHand.transform); // Instantiate the weapon next to it
         }
-        m_lastEquipedWeapon = weaponToEquip;
+        m_LastEquipedWeapon = weaponToEquip;
     }
 
 
@@ -87,9 +79,9 @@ public class PlayerInventory : MonoBehaviour
     public enum WeaponType
     {
         laserWeapon,
-        oneLaserWeapon,
+        vulcan,
         missleWeapon,
-        HomingMissileWeapon,
+        homingMissileWeapon,
     }
 
 
@@ -101,10 +93,10 @@ public class PlayerInventory : MonoBehaviour
 
     protected virtual void CollisionDetection(Collider collider)
     {
-        if (collider.gameObject.CompareTag(Constants.VULCAN))
+        if (collider.gameObject.CompareTag(Constants.VULCAN))//if i collider with something with that tag for the Vulcan Weapon
         {
-            Destroy(collider.gameObject);
-            oneLaserWeapon = true;
+            Destroy(collider.gameObject); //destroy
+            m_Vulcan = true; //i can use the Vulcan 
         }
        
 

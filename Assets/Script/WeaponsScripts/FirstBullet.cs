@@ -13,7 +13,7 @@ public class FirstBullet : Bullet
     {
         if (collision.gameObject.CompareTag(Constants.ENEMY))
         {
-            collision.transform.GetComponent<EnemyBase>().DamageBullet(damage);
+            collision.transform.GetComponent<EnemyBase>().DamageBullet(m_damage);
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag(Constants.WALL))

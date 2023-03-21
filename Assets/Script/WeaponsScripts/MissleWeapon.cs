@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MissleWeapon : Weapon
 {
-    public Transform gunEnd;
+    public Transform m_gunEnd;
 
 
 
 
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.m_ammoMissle > 0)
+        if (Input.GetKey(m_keyCode) && m_ReadyToShoot && PlayerInformation.m_instance.m_ammoMissle > 0)
         {
             Shooting();
             CountAmmo();
@@ -27,16 +27,16 @@ public class MissleWeapon : Weapon
     protected override void Shooting()
     {
         base.Shooting();
-        GameObject bullet = Instantiate(bulletPrefabs, gunEnd.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedX;
-        Invoke("ResetShooting", fireRate);
+        GameObject bullet = Instantiate(m_bulletPrefabs, m_gunEnd.position, transform.rotation); //Instantiate bullet
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * m_speedX; //bullet velocity
+        Invoke("ResetShooting", m_fireRate); //reset shooting with fireRate
 
     }
 
 
     protected override void CountAmmo()
     {
-        PlayerInformation.instance.m_ammoMissle -= ammoCost;
+        PlayerInformation.m_instance.m_ammoMissle -= m_ammoCost;
     }
 
 }
