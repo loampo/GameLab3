@@ -11,7 +11,7 @@ public class HomingMissileWeapon : Weapon
 
     void Update()
     {
-        if (Input.GetKey(m_keyCode) && m_ReadyToShoot && PlayerInformation.m_instance.m_ammoHomingMissle > 0) //press key
+        if (Input.GetKey(m_keyCode) && m_ReadyToShoot && PlayerInformation.m_instance.m_ammoHomingMissle > 0)
         {
 
             Shooting();

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerShip : MonoBehaviour
 {
-    public CursorLockMode cursorLockMode = CursorLockMode.Locked;
-    public bool cursorVisible = false;
+    private CursorLockMode cursorLockMode = CursorLockMode.Locked;
+    private bool cursorVisible = false;
     public float forwardSpeed = 100f;
     public float sidewaysSpeed = 100f;
     public float rotationSpeed = 100f;

@@ -13,6 +13,7 @@ public class Constants
     public const string AMMOSW = "AmmoSW";
     public const string SHIELD = "Shield";
     public const string ASTRONAUT = "Astronaut";
+    public const string REDKEY = "RedKey";
     //for the weapons
     public const string VULCAN = "Vulcan";
     

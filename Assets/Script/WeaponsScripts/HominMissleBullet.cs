@@ -6,22 +6,23 @@ public class HominMissleBullet : Bullet
 {
 
 
-    [SerializeField]
-    private float m_Speed = 15; //bullet speed
 
     [SerializeField]
-    private float m_RotationSpeed = 1000; //rotation for the missle
+    private float speed = 15;
 
     [SerializeField]
-    private float m_FocusDistance = 5; //max distance
+    private float rotationSpeed = 1000;
 
-    private Transform m_Target; //target for the missle
+    [SerializeField]
+    private float focusDistance = 5;
+
+    private Transform target;
 
 
     private void Start()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(Constants.ENEMY); //take enemy from all the map
-        EnemyTarget(enemies); //target 
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag(Constants.ENEMY);
+        EnemyTarget(enemies);
     }
 
 
@@ -29,7 +30,7 @@ public class HominMissleBullet : Bullet
     private void Update()
     {
         MovingMissle();
-        if (m_Target) HomingMissle(m_Target);
+        if (target) HomingMissle(target);
 
 
     }
@@ -37,32 +38,32 @@ public class HominMissleBullet : Bullet
 
     private void MovingMissle()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * m_Speed, Space.Self); //moving missle with velocity 
+        transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
     }
 
 
     private void EnemyTarget(GameObject[] enemies)
     {
-        m_Target = null;
+        target = null;
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.layer != 3) continue; //layer 3
-            if(!m_Target && Vector3.Distance(transform.position, enemy.transform.position) < m_FocusDistance ) //distance for the missle
+            if (enemy.layer != 3) continue;
+            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance)
             {
-                m_Target = enemy.transform; //take the hit
+                target = enemy.transform;
             }
-            else 
+            else
             {
-                float targetDistance = Vector3.Distance(transform.position, m_Target.transform.position);
+                float targetDistance = Vector3.Distance(transform.position, target.transform.position);
                 float enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
 
                 if (enemyDistance < targetDistance)
                 {
-                    m_Target = enemy.transform;
+                    target = enemy.transform;
 
                 }
 
-            } 
+            }
         }
     }
 
@@ -71,7 +72,7 @@ public class HominMissleBullet : Bullet
     {
         Vector3 targetDirection = target.transform.position - transform.position;
 
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, m_RotationSpeed * Time.deltaTime, 0.0F);
+        Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, rotationSpeed * Time.deltaTime, 0.0F);
 
         transform.rotation = Quaternion.LookRotation(newDirection);
 

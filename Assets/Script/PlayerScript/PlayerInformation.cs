@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+
 public class PlayerInformation : MonoBehaviour
 {
 
@@ -41,21 +41,9 @@ public class PlayerInformation : MonoBehaviour
     public int m_restoreAmmoHomingMissle; //how much Homing missle ammo can restore 
     bool m_AmmoLaserCollectible; //to figure out which ammunition to restock
     bool m_AmmoMissleCollectible; //to figure out which ammunition to restock
+    bool m_RedKey; // red key to open the last gate 
 
 
-    //----------------------------------------------------------Text for the ammo
-    [SerializeField] private TextMeshProUGUI m_AmmoCountLaser; //text for the Laser ammo count
-    [SerializeField] private TextMeshProUGUI m_AmmoCounVulcan; //text for the Vulcan ammo count
-    [SerializeField] private TextMeshProUGUI m_AmmoCountMissle; //text for the Missle ammo count
-    [SerializeField] private TextMeshProUGUI m_AmmoCountHomingMissle; //text for the Homing missle ammo count
-    [SerializeField] private TextMeshProUGUI m_HealtCount; ////text for the Healt count
-
-
-    //----------------------------------------------------------Canvas GameObject for activated Functions
-    public GameObject m_ammoLaserActivate; //switch ammo count 
-    public GameObject m_ammoVulcanActivate; //switch ammo count 
-    public GameObject m_ammoMissleActivate; //switch ammo count 
-    public GameObject m_ammoHomingMissleActivate; //switch ammo count 
 
 
     //----------------------------------------------------------Singleton
@@ -65,11 +53,8 @@ public class PlayerInformation : MonoBehaviour
     private void Awake()
     {
         m_AmmoLaserCollectible = true;
-        m_ammoLaserActivate.SetActive(true);
         m_AmmoMissleCollectible = true;
-        m_ammoMissleActivate.SetActive(true);
-        m_ammoHomingMissleActivate.SetActive(false);
-        m_ammoVulcanActivate.SetActive(false);
+
         //Controllo in più
         if (m_instance == null)
             m_instance = this;
@@ -80,11 +65,11 @@ public class PlayerInformation : MonoBehaviour
     private void Update()
     {
 
-        m_AmmoCountLaser.text = m_ammoLaser.ToString();
-        m_AmmoCountMissle.text = m_ammoMissle.ToString();
-        m_AmmoCountHomingMissle.text = m_ammoHomingMissle.ToString();
-        m_AmmoCounVulcan.text = m_ammoVulcan.ToString();
-        m_HealtCount.text = m_healt.ToString();
+        UIManager.m_instance.m_ammoCountLaser.text = m_ammoLaser.ToString();
+        UIManager.m_instance.m_ammoCountMissle.text = m_ammoMissle.ToString();
+        UIManager.m_instance.m_ammoCountHomingMissle.text = m_ammoHomingMissle.ToString();
+        UIManager.m_instance.m_ammoCounVulcan.text = m_ammoVulcan.ToString();
+        UIManager.m_instance.m_healtCount.text = m_healt.ToString();
         
 
     }
@@ -174,40 +159,41 @@ public class PlayerInformation : MonoBehaviour
             GameManager.instance.score += GameManager.instance.astronautScorePoints; // add points to the GameManager 
 
         }
+        if (collider.gameObject.CompareTag(Constants.REDKEY))  //if i collider with something with that tag REDKEY
+        {
+            Destroy(collider.gameObject); //destroy
+            m_RedKey = true; 
 
+        }
 
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromLaserToVulcan()
     {
-        m_ammoLaserActivate.SetActive(false);
-        m_ammoVulcanActivate.SetActive(true);
+        UIManager.m_instance.SwitchAmmoFromLaserToVulcan();
         m_AmmoLaserCollectible = false;
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromVulcanToLaser()
     {
-        m_ammoLaserActivate.SetActive(true);
-        m_ammoVulcanActivate.SetActive(false);
         m_AmmoLaserCollectible = true;
+        UIManager.m_instance.SwitchAmmoFromVulcanToLaser();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromMissleToHomingMissle()
     {
-        m_ammoMissleActivate.SetActive(false);
-        m_ammoHomingMissleActivate.SetActive(true);
         m_AmmoMissleCollectible = false;
+        UIManager.m_instance.SwitchAmmoFromMissleToHomingMissle();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromHomingMissleToMissle()
     {
-        m_ammoMissleActivate.SetActive(true);
-        m_ammoHomingMissleActivate.SetActive(false);
         m_AmmoMissleCollectible = true;
+        UIManager.m_instance.SwitchAmmoFromHomingMissleToMissle();
     }
 
     //funcion for taking damage from enemy bullet
