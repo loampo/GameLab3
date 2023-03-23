@@ -12,7 +12,7 @@ public class RedEnemy : EnemyBase
     public NavMeshAgent m_agent; //agent 
 
     private Vector3 m_Offset = new Vector3(0f, 0f, 5f);
-    private Vector3 m_Offset2 = new Vector3(0f, 5f, 0f);
+    //private Vector3 m_Offset2 = new Vector3(0f, 5f, 0f);
     
     
     
@@ -38,8 +38,8 @@ public class RedEnemy : EnemyBase
     {
         
         //rotate around player
-        Vector3 mov = new Vector3(transform.position.x, Mathf.Sin(speedUpDown * Time.time) * distanceUpDown, transform.position.z) + m_Offset2; //used with sin for swinging
-        transform.position = mov;
+        //Vector3 mov = new Vector3(transform.position.x, Mathf.Sin(speedUpDown * Time.time) * distanceUpDown, transform.position.z) + m_Offset2; //used with sin for swinging
+        //transform.position = mov;
 
         float distanceToPlayer = Vector3.Distance(m_player.position, transform.position); //distance from the player 
         Vector3 playerPosition = m_player.position - m_Offset; //distance from enemy to player + offset
