@@ -44,7 +44,9 @@ public class PlayerInformation : MonoBehaviour
     public int m_restoreAmmoMissle; //how much Missle ammo can restore 
     [Range(1f, 20f)]
     public int m_restoreAmmoHomingMissle; //how much Homing missle ammo can restore 
-    bool m_AmmoLaserCollectible; //to figure out which ammunition to restock
+    [HideInInspector] public bool m_ammoLaserCollectible; //to figure out which ammunition to restock
+    [HideInInspector] public bool m_ammoMissleCollectible =true; //to figure out which amminition to restock
+    
     bool m_RedKey; // red key to open the last gate 
     [HideInInspector]
     public bool is_EnergyPickUp;
@@ -92,7 +94,7 @@ public class PlayerInformation : MonoBehaviour
     {
         if (collider.gameObject.CompareTag(Constants.AMMOFW)) //if i collider with something with that tag for the ammo
         {
-            if (!m_AmmoLaserCollectible) //if the weapon that i equiped isn't m_AmmoLaserCollectible it means is vulcan weapon 
+            if (!m_ammoLaserCollectible) //if the weapon that i equiped isn't m_AmmoLaserCollectible it means is vulcan weapon 
             {
                 if (m_ammoVulcan >= m_maxAmmoVulcan) //if i have more ammo that i can have 
                 {
@@ -150,7 +152,7 @@ public class PlayerInformation : MonoBehaviour
         if (collider.gameObject.CompareTag(Constants.ASTRONAUT))  //if i collider with something with that tag for the ASTRONAUT
         {
             Destroy(collider.gameObject); //destroy
-            GameManager.instance.score += GameManager.instance.astronautScorePoints; // add points to the GameManager 
+            GameManager.instance.m_score += GameManager.instance.m_astronautScorePoints; // add points to the GameManager 
 
         }
         if (collider.gameObject.CompareTag(Constants.REDKEY))  //if i collider with something with that tag REDKEY
@@ -180,28 +182,29 @@ public class PlayerInformation : MonoBehaviour
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromLaserToVulcan()
     {
+        m_ammoLaserCollectible = false;
         UIManager.m_instance.SwitchAmmoFromLaserToVulcan();
-        m_AmmoLaserCollectible = false;
+        
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromVulcanToLaser()
     {
-        m_AmmoLaserCollectible = true;
+        m_ammoLaserCollectible = true;
         UIManager.m_instance.SwitchAmmoFromVulcanToLaser();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromMissleToHomingMissle()
     {
-        
+        m_ammoMissleCollectible = false;
         UIManager.m_instance.SwitchAmmoFromMissleToHomingMissle();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromHomingMissleToMissle()
     {
-        
+        m_ammoMissleCollectible = true;
         UIManager.m_instance.SwitchAmmoFromHomingMissleToMissle();
     }
 

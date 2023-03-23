@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_AmmoHomingMissleActivate; //switch ammo count 
 
 
+    [SerializeField] private Canvas canvas;
+
+
     public static UIManager m_instance;
 
     private void Awake()
@@ -56,15 +59,12 @@ public class UIManager : MonoBehaviour
         
     }
 
-
-
     public void SwitchAmmoFromMissleToHomingMissle()
     {
         m_AmmoMissleActivate.SetActive(false);
         m_AmmoHomingMissleActivate.SetActive(true);
         
     }
-
 
     public void SwitchAmmoFromHomingMissleToMissle()
     {
@@ -73,4 +73,17 @@ public class UIManager : MonoBehaviour
         
     }
 
+    public void SwitchFromMainCameraToBack()
+    {
+
+        canvas.enabled = false;
+    }
+
+    public void SwitchFromBackCameraToMainCamera()
+    {
+
+        canvas.enabled = true;
+    }
+
+ 
 }
