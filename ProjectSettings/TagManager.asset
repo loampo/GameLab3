@@ -11,6 +11,7 @@ TagManager:
   - AmmoFW
   - AmmoSW
   - Vulcan
+  - RedKey
   layers:
   - Default
   - TransparentFX

@@ -5,15 +5,15 @@ using TMPro;
 
 public class LaserWeapon : Weapon
 {
-    public Transform gunEnd;
-    public Transform gunEnd1;
+    public Transform m_gunEnd;
+    public Transform m_gunEnd1;
 
     
 
 
     void Update()
     {
-        if (Input.GetKey(keyCode) && readyToShoot && PlayerInformation.instance.m_ammoLaser > 0)
+        if (Input.GetKey(m_keyCode) && m_ReadyToShoot && PlayerInformation.m_instance.m_ammoLaser > 0) //press key
         {
             Shooting();
             CountAmmo();
@@ -28,17 +28,18 @@ public class LaserWeapon : Weapon
     protected override void Shooting()
     {
         base.Shooting();
-        GameObject bullet = Instantiate(bulletPrefabs, gunEnd.position, transform.rotation);
-        GameObject bullet1 = Instantiate(bulletPrefabs, gunEnd1.position, transform.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = transform.forward * speedX;
-        bullet1.GetComponent<Rigidbody>().velocity = transform.forward * speedX;
-        Invoke("ResetShooting", fireRate);
-        
+        GameObject bullet = Instantiate(m_bulletPrefabs, m_gunEnd.position, transform.rotation); //Instantiate bullet
+        GameObject bullet1 = Instantiate(m_bulletPrefabs, m_gunEnd1.position, transform.rotation); //Instantiate bullet
+        bullet.GetComponent<Rigidbody>().velocity = transform.forward * m_speedX; //bullet velocity 
+        bullet1.GetComponent<Rigidbody>().velocity = transform.forward * m_speedX; //bullet velocity 
+        Invoke("ResetShooting", m_fireRate); //reset shooting with fireRate
+
     }
 
+    //count ammo 
     protected override void CountAmmo()
     {
-        PlayerInformation.instance.m_ammoLaser -= ammoCost;
+        PlayerInformation.m_instance.m_ammoLaser -= m_ammoCost; //count ammo 
     }
 
 

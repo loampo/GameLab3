@@ -21,7 +21,7 @@ public class EnemyBullet : Bullet
     {
         if (collision.gameObject.CompareTag(Constants.PLAYER))
         {
-            collision.transform.GetComponent<PlayerInformation>().Damage(damage);
+            collision.transform.GetComponent<PlayerInformation>().Damage(m_damage);
             Debug.Log(collision);
             Destroy(gameObject);
         }
