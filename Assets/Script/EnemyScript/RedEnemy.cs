@@ -11,7 +11,7 @@ public class RedEnemy : EnemyBase
     private int locationIndex = 0;
     public NavMeshAgent agent;
     private Vector3 offset = new Vector3(0f, 0f, 5f);
-    private Vector3 offset2 = new Vector3(0f, -5f, 0f);
+    //public Vector3 offset2 = new Vector3(0f, -5f, 0f);
     
     
     
@@ -35,10 +35,10 @@ public class RedEnemy : EnemyBase
     //Dedicato a interrompere il suo Patrol per venire a disturbare il player finchè in zona
     private void Update()
     {
-        
+
         //rotate around player
-        Vector3 mov = new Vector3(transform.position.x, Mathf.Sin(speedUpDown * Time.time) * distanceUpDown, transform.position.z) + offset2;
-        transform.position = mov;
+        //Vector3 mov = new Vector3(transform.position.x, Mathf.Sin(speedUpDown * Time.time) * distanceUpDown, transform.position.z) + offset2;
+        //transform.position = mov;
 
         float distanceToPlayer = Vector3.Distance(Player.position, transform.position);
         Vector3 playerPosition = Player.position - offset;
