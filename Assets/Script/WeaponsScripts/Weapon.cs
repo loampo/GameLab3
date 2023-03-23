@@ -8,7 +8,8 @@ public abstract class Weapon : MonoBehaviour
     public float m_fireRate; //fire rate for the player 
     protected bool m_ReadyToShoot; //if i can shoot again 
     protected float m_NextFire; //next bullet 
-    public int m_ammoCost; // cost for every bullet 
+    public Transform m_gunEnd;
+    public int m_ammoCost;
     public GameObject m_bulletPrefabs; //bullet prefabs that will be used for the weapon 
     public float m_speedX; //bullet speed 
     public KeyCode m_keyCode; //which key you can shoot with

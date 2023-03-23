@@ -9,9 +9,11 @@ TagManager:
   - Shield
   - Astronaut
   - AmmoFW
-  - AmmoSW
   - Vulcan
   - RedKey
+  - Energy
+  - AmmoMW
+  - AmmoHMW
   layers:
   - Default
   - TransparentFX

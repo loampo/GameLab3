@@ -96,7 +96,8 @@ public class PlayerInventory : MonoBehaviour
         if (collider.gameObject.CompareTag(Constants.VULCAN))//if i collider with something with that tag for the Vulcan Weapon
         {
             Destroy(collider.gameObject); //destroy
-            m_Vulcan = true; //i can use the Vulcan 
+            m_Vulcan = true; //i can use the Vulcan
+            PlayerInformation.m_instance.m_ammoVulcan += PlayerInformation.m_instance.m_restoreAmmoVulcan;
         }
        
 

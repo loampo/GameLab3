@@ -12,7 +12,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI m_ammoCounVulcan; //text for the Vulcan ammo count
     public TextMeshProUGUI m_ammoCountMissle; //text for the Missle ammo count
     public TextMeshProUGUI m_ammoCountHomingMissle; //text for the Homing missle ammo count
+    public TextMeshProUGUI m_energyCount; //text for the energy
     public TextMeshProUGUI m_healtCount; ////text for the Healt count
+
 
 
     //----------------------------------------------------------Canvas GameObject for activated Functions

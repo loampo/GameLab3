@@ -11,18 +11,23 @@ public class PlayerInformation : MonoBehaviour
     [Range(1f, 200f)] 
     public int m_maxHealt; //maxHealt for the Playe 
     [Range(1f, 100f)]
+    [HideInInspector]
     public int m_ammoLaser; //ammo for Laser 
     [Range(1f, 200f)]
     public int m_maxAmmoLaser; //maxAmmo for Laser 
-    [Range(1f, 9999f)]
+    [Range(0f, 9999f)]
     public int m_ammoVulcan; //ammo for Vulcan
     [Range(1f, 9999f)]
     public int m_maxAmmoVulcan; //maxAmmo for Vulcan
+    [Range(1f, 200f)]
+    public float m_energy; //energy 
+    [Range(1f, 400f)]
+    public int m_Maxenergy; //energy 
     [Range(1f, 20f)]
     public int m_ammoMissle; //ammo for Missle
     [Range(1f, 20f)]
     public int m_maxAmmoMissle; //maxAmmo for Missle
-    [Range(1f, 20f)]
+    [Range(0f, 20f)]
     public int m_ammoHomingMissle; //ammo for Homing missle
     [Range(1f, 20f)]
     public int m_maxAmmoHomingMissle; //maxAmmo for Homing missle
@@ -32,16 +37,17 @@ public class PlayerInformation : MonoBehaviour
     [Range(1f, 20f)]
     public int m_restoreHP; //how much hp can restore 
     [Range(1f, 20f)]
-    public int m_restoreAmmoLaser; //how much Laser ammo can restore 
-    [Range(1f, 20f)]
+    public int m_restoreEnergy; //how much energy can restore
+    [Range(1f, 1250f)]
     public int m_restoreAmmoVulcan; //how much Vulcan ammo can restore 
     [Range(1f, 20f)]
     public int m_restoreAmmoMissle; //how much Missle ammo can restore 
     [Range(1f, 20f)]
     public int m_restoreAmmoHomingMissle; //how much Homing missle ammo can restore 
     bool m_AmmoLaserCollectible; //to figure out which ammunition to restock
-    bool m_AmmoMissleCollectible; //to figure out which ammunition to restock
     bool m_RedKey; // red key to open the last gate 
+    [HideInInspector]
+    public bool is_EnergyPickUp;
 
 
 
@@ -52,8 +58,6 @@ public class PlayerInformation : MonoBehaviour
     //set Canvas with right information about ammo and about the right weapon equiped on start
     private void Awake()
     {
-        m_AmmoLaserCollectible = true;
-        m_AmmoMissleCollectible = true;
 
         //Controllo in più
         if (m_instance == null)
@@ -61,6 +65,7 @@ public class PlayerInformation : MonoBehaviour
         
     }
 
+    
     //write starting ammo
     private void Update()
     {
@@ -70,7 +75,10 @@ public class PlayerInformation : MonoBehaviour
         UIManager.m_instance.m_ammoCountHomingMissle.text = m_ammoHomingMissle.ToString();
         UIManager.m_instance.m_ammoCounVulcan.text = m_ammoVulcan.ToString();
         UIManager.m_instance.m_healtCount.text = m_healt.ToString();
-        
+        int EnergyINT = Mathf.RoundToInt(m_energy);
+        UIManager.m_instance.m_energyCount.text = EnergyINT.ToString();
+
+
 
     }
 
@@ -84,19 +92,7 @@ public class PlayerInformation : MonoBehaviour
     {
         if (collider.gameObject.CompareTag(Constants.AMMOFW)) //if i collider with something with that tag for the ammo
         {
-            if (m_AmmoLaserCollectible) //if the weapon that i equiped is m_AmmoLaserCollectible it means is Laser Weapon
-            {
-                if (m_ammoLaser >= m_maxAmmoLaser) //if i have more ammo that i can have 
-                {
-                    Destroy(collider.gameObject); //destroy
-                }
-                else
-                {
-                    Destroy(collider.gameObject);  //destroy
-                    m_ammoLaser += m_restoreAmmoLaser; //restore ammo
-                }
-            }
-            else if (!m_AmmoLaserCollectible) //if the weapon that i equiped isn't m_AmmoLaserCollectible it means is vulcan weapon 
+            if (!m_AmmoLaserCollectible) //if the weapon that i equiped isn't m_AmmoLaserCollectible it means is vulcan weapon 
             {
                 if (m_ammoVulcan >= m_maxAmmoVulcan) //if i have more ammo that i can have 
                 {
@@ -110,34 +106,32 @@ public class PlayerInformation : MonoBehaviour
             }
 
         }
-        if (collider.gameObject.CompareTag(Constants.AMMOSW))
+        if (collider.gameObject.CompareTag(Constants.AMMOMW))
         {
-            if (m_AmmoMissleCollectible) //if the weapon that i equiped is m_AmmoMissleCollectible it means is Missle weapon 
+
+            if (m_ammoMissle >= m_maxAmmoMissle)  //if i have more ammo that i can have 
             {
-                if (m_ammoMissle >= m_maxAmmoMissle)  //if i have more ammo that i can have 
-                {
-                    Destroy(collider.gameObject); //destroy
-                }
-                else
-                {
-                    Destroy(collider.gameObject); //destroy
-                    m_ammoMissle += m_restoreAmmoMissle; //restore ammo
-                }
+                Destroy(collider.gameObject); //destroy
             }
-            else if (!m_AmmoMissleCollectible) //if the weapon that i equiped isn't m_AmmoMissleCollectible it means is Homing Missle 
+            else
             {
-                if (m_ammoHomingMissle >= m_maxAmmoHomingMissle) //if i have more ammo that i can have 
-                {
-                    Destroy(collider.gameObject); //destroy
-                }
-                else
-                {
-                    Destroy(collider.gameObject); //destroy
-                    m_ammoHomingMissle += m_restoreAmmoHomingMissle; //restore ammo
-                }
+                Destroy(collider.gameObject); //destroy
+                m_ammoMissle += m_restoreAmmoMissle; //restore ammo
             }
-            
-            
+
+        }
+        if (collider.gameObject.CompareTag(Constants.AMMOHMW))
+        {
+
+            if (m_ammoHomingMissle >= m_maxAmmoHomingMissle)  //if i have more ammo that i can have 
+            {
+                Destroy(collider.gameObject); //destroy
+            }
+            else
+            {
+                Destroy(collider.gameObject); //destroy
+                m_ammoHomingMissle += m_restoreAmmoHomingMissle; //restore ammo
+            }
 
         }
 
@@ -165,7 +159,22 @@ public class PlayerInformation : MonoBehaviour
             m_RedKey = true; 
 
         }
-
+        if (collider.gameObject.CompareTag(Constants.ENERGY))
+        {
+            is_EnergyPickUp = true;
+            if (m_energy >= m_Maxenergy)  //if i have more ammo that i can have 
+            {
+                Destroy(collider.gameObject); //destroy
+                
+            }
+            else
+            {
+                Destroy(collider.gameObject); //destroy
+                m_energy += m_restoreEnergy; //restore ammo
+                
+            }
+        }
+        
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
@@ -185,14 +194,14 @@ public class PlayerInformation : MonoBehaviour
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromMissleToHomingMissle()
     {
-        m_AmmoMissleCollectible = false;
+        
         UIManager.m_instance.SwitchAmmoFromMissleToHomingMissle();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromHomingMissleToMissle()
     {
-        m_AmmoMissleCollectible = true;
+        
         UIManager.m_instance.SwitchAmmoFromHomingMissleToMissle();
     }
 
@@ -209,6 +218,8 @@ public class PlayerInformation : MonoBehaviour
         }
 
     }
+
+
 
 
 }

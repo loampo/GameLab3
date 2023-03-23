@@ -6,7 +6,8 @@ public class HomingMissileWeapon : Weapon
 {
 
     
-    public Transform m_gunEnd;
+    
+    
 
 
     void Update()

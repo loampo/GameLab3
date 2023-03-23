@@ -5,21 +5,32 @@ using TMPro;
 
 public class LaserWeapon : Weapon
 {
-    public Transform m_gunEnd;
-    public Transform m_gunEnd1;
-
     
+    public Transform m_gunEnd1;
+    public float m_laserCost; // cost for every bullet 
 
+    private void Start()
+    {
+        CountLaserEnergy();
+    }
 
     void Update()
     {
+
+        
         if (Input.GetKey(m_keyCode) && m_ReadyToShoot && PlayerInformation.m_instance.m_ammoLaser > 0) //press key
         {
             Shooting();
             CountAmmo();
-
+            
 
         }
+        if (PlayerInformation.m_instance.is_EnergyPickUp)
+        {
+            CountLaserEnergy();
+            PlayerInformation.m_instance.is_EnergyPickUp=false;
+        }
+            
 
     }
 
@@ -39,11 +50,17 @@ public class LaserWeapon : Weapon
     //count ammo 
     protected override void CountAmmo()
     {
-        PlayerInformation.m_instance.m_ammoLaser -= m_ammoCost; //count ammo 
+        PlayerInformation.m_instance.m_energy -= m_laserCost;
+        CountLaserEnergy();
     }
 
 
+    private void CountLaserEnergy()
+    {
+        
+        PlayerInformation.m_instance.m_ammoLaser = (int)Mathf.Round(PlayerInformation.m_instance.m_energy / m_laserCost);
+        
 
-
+    }
 }
 

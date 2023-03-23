@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class OneLaserWeapon : Weapon
 {
-    public Transform m_gunEnd; //gun end 
-
+    
+   
 
     void Update()
     {

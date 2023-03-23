@@ -10,10 +10,12 @@ public class Constants
     public const string PLAYER = "Player";
     //for the collectible
     public const string AMMOFW = "AmmoFW";
-    public const string AMMOSW = "AmmoSW";
+    public const string AMMOMW = "AmmoMW";
+    public const string AMMOHMW = "AmmoHMW";
     public const string SHIELD = "Shield";
     public const string ASTRONAUT = "Astronaut";
     public const string REDKEY = "RedKey";
+    public const string ENERGY = "Energy";
     //for the weapons
     public const string VULCAN = "Vulcan";
     
