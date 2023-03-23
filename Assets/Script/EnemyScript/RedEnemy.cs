@@ -11,7 +11,7 @@ public class RedEnemy : EnemyBase
     private int locationIndex = 0;
     public NavMeshAgent agent;
     private Vector3 offset = new Vector3(0f, 0f, 5f);
-    private Vector3 offset2 = new Vector3(0f, 5f, 0f);
+    private Vector3 offset2 = new Vector3(0f, -5f, 0f);
     
     
     
