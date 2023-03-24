@@ -1,0 +1,756 @@
+fileFormatVersion: 2
+guid: 8e95a59514f184548822e22d0fb85929
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3420392175965380432
+    second: FRAME_BARRE_ENERGIA_0
+  - first:
+      213: -7132493128319067314
+    second: FRAME_BARRE_ENERGIA_1
+  - first:
+      213: -6822889471922291273
+    second: FRAME_BARRE_ENERGIA_2
+  - first:
+      213: 1332722232730289357
+    second: FRAME_BARRE_ENERGIA_3
+  - first:
+      213: -1136150847438092122
+    second: FRAME_BARRE_ENERGIA_4
+  - first:
+      213: 3371975056269879069
+    second: FRAME_BARRE_ENERGIA_5
+  - first:
+      213: 6055422638207369888
+    second: FRAME_BARRE_ENERGIA_6
+  - first:
+      213: -2897139801684687028
+    second: FRAME_BARRE_ENERGIA_7
+  - first:
+      213: -6744613095948337362
+    second: FRAME_BARRE_ENERGIA_8
+  - first:
+      213: -5562209344117587143
+    second: FRAME_BARRE_ENERGIA_9
+  - first:
+      213: -7879423366431471443
+    second: FRAME_BARRE_ENERGIA_10
+  - first:
+      213: 5886370450211266766
+    second: FRAME_BARRE_ENERGIA_11
+  - first:
+      213: 5516381863018690394
+    second: FRAME_BARRE_ENERGIA_12
+  - first:
+      213: -7303122081105385644
+    second: FRAME_BARRE_ENERGIA_13
+  - first:
+      213: -2801895829548946793
+    second: FRAME_BARRE_ENERGIA_14
+  - first:
+      213: 4915989396244505198
+    second: FRAME_BARRE_ENERGIA_15
+  - first:
+      213: -7935736680216433660
+    second: FRAME_BARRE_ENERGIA_16
+  - first:
+      213: 3273413292311819532
+    second: FRAME_BARRE_ENERGIA_17
+  - first:
+      213: 3859747282318727239
+    second: FRAME_BARRE_ENERGIA_18
+  - first:
+      213: 8225797603849105446
+    second: FRAME_BARRE_ENERGIA_19
+  - first:
+      213: -5789190671703402181
+    second: FRAME_BARRE_ENERGIA_20
+  - first:
+      213: -138708339830397684
+    second: FRAME_BARRE_ENERGIA_21
+  - first:
+      213: 3508256837091895848
+    second: FRAME_BARRE_ENERGIA_22
+  - first:
+      213: 7679837099771609728
+    second: FRAME_BARRE_ENERGIA_23
+  - first:
+      213: 48987914872943612
+    second: FRAME_BARRE_ENERGIA_24
+  - first:
+      213: -8110832396094823424
+    second: FRAME_BARRE_ENERGIA_25
+  - first:
+      213: -7301103472416343552
+    second: FRAME_BARRE_ENERGIA_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 811
+        width: 33
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f11f0ef8ca77f20800000000000000
+      internalID: 3420392175965380432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 806
+        width: 46
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b90a31a4b440d90800000000000000
+      internalID: -7132493128319067314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 806
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdb15cac2a3051a0800000000000000
+      internalID: -6822889471922291273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 807
+        width: 45
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc487224fc7ce7210800000000000000
+      internalID: 1332722232730289357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 806
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a88137e2d49b30f0800000000000000
+      internalID: -1136150847438092122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 806
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17a17cb279abce20800000000000000
+      internalID: 3371975056269879069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 806
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a285337ece290450800000000000000
+      internalID: 6055422638207369888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 806
+        width: 47
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4740f733ba4bc7d0800000000000000
+      internalID: -2897139801684687028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_8
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 805
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f3d8caf125662a0800000000000000
+      internalID: -6744613095948337362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_9
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 805
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933438542101fc2b0800000000000000
+      internalID: -5562209344117587143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_10
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 804
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da880f8f13aa6a290800000000000000
+      internalID: -7879423366431471443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_11
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 699
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0e235bcb690b150800000000000000
+      internalID: 5886370450211266766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_12
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 699
+        width: 49
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a57f2aec3102e8c40800000000000000
+      internalID: 5516381863018690394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_13
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 700
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457e66c292916aa90800000000000000
+      internalID: -7303122081105385644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_14
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 700
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a261e869aad19d0800000000000000
+      internalID: -2801895829548946793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_15
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 700
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62adb25f4a193440800000000000000
+      internalID: 4915989396244505198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_16
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 700
+        width: 47
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c69a0e8899ed190800000000000000
+      internalID: -7935736680216433660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_17
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 699
+        width: 50
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05b94bcb008d6d20800000000000000
+      internalID: 3273413292311819532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_18
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 699
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748136514b3909530800000000000000
+      internalID: 3859747282318727239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_19
+      rect:
+        serializedVersion: 2
+        x: 1430
+        y: 700
+        width: 48
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6207faba657e72270800000000000000
+      internalID: 8225797603849105446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_20
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 700
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b391d1ca1c9a8afa0800000000000000
+      internalID: -5789190671703402181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_21
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 700
+        width: 33
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c056605ff75331ef0800000000000000
+      internalID: -138708339830397684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_22
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 505
+        width: 56
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82aa2bb7105dfa030800000000000000
+      internalID: 3508256837091895848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_23
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 461
+        width: 56
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082c0c81723449a60800000000000000
+      internalID: 7679837099771609728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_24
+      rect:
+        serializedVersion: 2
+        x: 1533
+        y: 412
+        width: 56
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3f940cf3a0ea000800000000000000
+      internalID: 48987914872943612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_25
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 286
+        width: 378
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 004a906a8e8807f80800000000000000
+      internalID: -8110832396094823424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FRAME_BARRE_ENERGIA_26
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 286
+        width: 379
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ab04223154daa90800000000000000
+      internalID: -7301103472416343552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a9c83393abdcecd45a21314775a4a6f9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
