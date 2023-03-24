@@ -67,7 +67,7 @@ public class PlayerInformation : MonoBehaviour
         
     }
 
-    
+
     //write starting ammo
     private void Update()
     {
@@ -80,8 +80,35 @@ public class PlayerInformation : MonoBehaviour
         int EnergyINT = Mathf.RoundToInt(m_energy);
         UIManager.m_instance.m_energyCount.text = EnergyINT.ToString();
 
-
-
+        //Shield Image script
+        if (m_healt >= 75)
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = true;
+            UIManager.m_instance.m_shieldImages[2].enabled = true;
+            UIManager.m_instance.m_shieldImages[3].enabled = true;
+        }
+        else if (m_healt >= 50)
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = true;
+            UIManager.m_instance.m_shieldImages[2].enabled = true;
+            UIManager.m_instance.m_shieldImages[3].enabled = false;
+        }
+        else if (m_healt >= 25)
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = true;
+            UIManager.m_instance.m_shieldImages[2].enabled = false;
+            UIManager.m_instance.m_shieldImages[3].enabled = false;
+        }
+        else
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = false;
+            UIManager.m_instance.m_shieldImages[2].enabled = false;
+            UIManager.m_instance.m_shieldImages[3].enabled = false;
+        }
     }
 
 

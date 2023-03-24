@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI m_ammoCountMissle; //text for the Missle ammo count
     public TextMeshProUGUI m_ammoCountHomingMissle; //text for the Homing missle ammo count
     public TextMeshProUGUI m_energyCount; //text for the energy
-    public TextMeshProUGUI m_healtCount; ////text for the Healt count
+    public TextMeshProUGUI m_healtCount; //text for the Healt count
+    public Image[] m_shieldImages; //Shield images
 
 
 
