@@ -8,11 +8,8 @@ public class GameManager : MonoBehaviour
     public int m_astronautScorePoints;
     public Camera m_mainCamera;
     public Camera m_cameraBack;
-    
-    
 
     [SerializeField] private TextMeshProUGUI ScoreText;
-
 
     public static GameManager instance;
 
@@ -24,7 +21,6 @@ public class GameManager : MonoBehaviour
             instance = this;
 
     }
-
 
     private void Update()
     {
@@ -40,12 +36,5 @@ public class GameManager : MonoBehaviour
             m_cameraBack.enabled = false;
             UIManager.m_instance.SwitchFromBackCameraToMainCamera();
         }
-        
-
-
-
     }
-
-
-
 }
