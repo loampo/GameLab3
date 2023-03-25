@@ -109,6 +109,105 @@ public class PlayerInformation : MonoBehaviour
             UIManager.m_instance.m_shieldImages[2].enabled = false;
             UIManager.m_instance.m_shieldImages[3].enabled = false;
         }
+
+        //Energy Bar
+        for (int i = 0; i < 11; i++)
+        {
+            UIManager.m_instance.m_EnergyImagesR[i].enabled = false;
+            UIManager.m_instance.m_EnergyImagesL[i].enabled = false;
+        }
+        if (m_energy >= 90)
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 81)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 72)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 63)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 54)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 45)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 36)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 27)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 18)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 9)
+        {            
+            for (int i = 0; i < 2; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy > 0)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else
+        {
+            //Use the for before
+        }        
     }
 
 

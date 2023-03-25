@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI m_energyCount; //text for the energy
     public TextMeshProUGUI m_healtCount; //text for the Healt count
     public Image[] m_shieldImages; //Shield images
+    public Image[] m_EnergyImagesR; //Energy images R
+    public Image[] m_EnergyImagesL; //Energy images L
 
 
 
