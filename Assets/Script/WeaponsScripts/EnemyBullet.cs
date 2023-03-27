@@ -30,5 +30,11 @@ public class EnemyBullet : Bullet
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.CompareTag(Constants.PLAYERBULLET))
+        {
+            Destroy(gameObject);
+
+        }
+        
     }
 }

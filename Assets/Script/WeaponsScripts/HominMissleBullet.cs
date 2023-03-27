@@ -91,7 +91,11 @@ public class HominMissleBullet : Bullet
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.CompareTag(Constants.ENEMYBULLET))
+        {
+            Destroy(gameObject);
 
+        }
     }
 
 

@@ -22,6 +22,11 @@ public class FirstBullet : Bullet
             Destroy(gameObject);
             
         }
+        if (collision.gameObject.CompareTag(Constants.ENEMYBULLET))
+        {
+            Destroy(gameObject);
+
+        }
     }
 
 
