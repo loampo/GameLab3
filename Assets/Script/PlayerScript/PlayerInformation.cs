@@ -32,6 +32,9 @@ public class PlayerInformation : MonoBehaviour
     [Range(1f, 20f)]
     public int m_maxAmmoHomingMissle; //maxAmmo for Homing missle
 
+    [HideInInspector] public int m_lives;
+    public Transform m_respawnPoint;
+
 
     //----------------------------------------------------------Collectible Attributs
     [Range(1f, 20f)]
@@ -47,7 +50,7 @@ public class PlayerInformation : MonoBehaviour
     [HideInInspector] public bool m_ammoLaserCollectible; //to figure out which ammunition to restock
     [HideInInspector] public bool m_ammoMissleCollectible =true; //to figure out which amminition to restock
     
-    bool m_RedKey; // red key to open the last gate 
+    public bool m_RedKey; // red key to open the last gate 
     [HideInInspector]
     public bool is_EnergyPickUp;
 
@@ -67,7 +70,10 @@ public class PlayerInformation : MonoBehaviour
         
     }
 
-
+    private void Start()
+    {
+        m_lives = 3;
+    }
     //write starting ammo
     private void Update()
     {
@@ -278,13 +284,14 @@ public class PlayerInformation : MonoBehaviour
         if (collider.gameObject.CompareTag(Constants.ASTRONAUT))  //if i collider with something with that tag for the ASTRONAUT
         {
             Destroy(collider.gameObject); //destroy
-            GameManager.instance.m_score += GameManager.instance.m_astronautScorePoints; // add points to the GameManager 
+            GameManager.m_instance.m_score += GameManager.m_instance.m_astronautScorePoints; // add points to the GameManager 
 
         }
         if (collider.gameObject.CompareTag(Constants.REDKEY))  //if i collider with something with that tag REDKEY
         {
             Destroy(collider.gameObject); //destroy
-            m_RedKey = true; 
+            m_RedKey = true;
+            UIManager.m_instance.m_redKeyImage.SetActive(true);
 
         }
         if (collider.gameObject.CompareTag(Constants.ENERGY))
@@ -340,11 +347,30 @@ public class PlayerInformation : MonoBehaviour
         m_healt -= damageAmount;
 
         //Check if health has fallen below zero
-        if (m_healt <= 0)
+        if (m_healt <= 0 )
         {
-            Destroy(gameObject);
-
+            if (m_lives > 0)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+                UIManager.m_instance.m_loseScene.SetActive(true);
+                gameObject.SetActive(false);
+                transform.position = new Vector3(m_respawnPoint.transform.position.x, m_respawnPoint.transform.position.y, m_respawnPoint.transform.position.z);
+            }
+            else if (m_lives <= 0 )
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+                UIManager.m_instance.m_loseScene0Live.SetActive(true);
+                gameObject.SetActive(false);
+            }
+            
+            
+            
         }
+        
 
     }
 

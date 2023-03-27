@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int m_score=0;
@@ -19,14 +20,15 @@ public class GameManager : MonoBehaviour
     public GameObject m_player;
 
 
-    public static GameManager instance;
+
+    public static GameManager m_instance;
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        m_mainCamera.enabled = true;
         //Controllo in più
-        if (instance == null)
-            instance = this;
+        if (m_instance == null)
+            m_instance = this;
 
     }
 
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         if (Time.timeScale == 0)
         {
-            UIManager.m_instance.pause.SetActive(false);
+            UIManager.m_instance.m_pause.SetActive(false);
             Time.timeScale = 1;
             Cursor.lockState = m_CursorLockModeLocked;
             Cursor.visible =m_CursorVisibleFalse;
@@ -79,11 +81,61 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        UIManager.m_instance.pause.SetActive(true);
+        UIManager.m_instance.m_pause.SetActive(true);
         Time.timeScale = 0;
         Cursor.lockState = m_CursorLockModeNone; //Impedisce al cursore di uscire dallo schermo
         Cursor.visible = m_CursorVisibleTrue; // Nasconde il cursore del mouse
         m_player.SetActive(false);
         m_mainCamera.enabled = true;
     }
+
+    public void Retry()
+    {
+        
+        
+        if (PlayerInformation.m_instance.m_lives == 3)
+        {
+            PlayerInformation.m_instance.m_lives -= 1;
+            PlayerInformation.m_instance.m_healt = 100;
+            UIManager.m_instance.m_lives[0].enabled = false;
+            UIManager.m_instance.m_loseScene.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = m_CursorLockModeLocked;
+            Cursor.visible = m_CursorVisibleFalse;
+            
+
+        }
+        else if(PlayerInformation.m_instance.m_lives == 2)
+        {
+            PlayerInformation.m_instance.m_lives -= 1;
+            PlayerInformation.m_instance.m_healt = 100;
+            UIManager.m_instance.m_lives[1].enabled = false;
+            UIManager.m_instance.m_loseScene.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = m_CursorLockModeLocked;
+            Cursor.visible = m_CursorVisibleFalse;
+            
+
+        }
+        else if (PlayerInformation.m_instance.m_lives == 1)
+        {
+            PlayerInformation.m_instance.m_lives -= 1;
+            PlayerInformation.m_instance.m_healt = 100;
+            UIManager.m_instance.m_lives[2].enabled = false;
+            UIManager.m_instance.m_loseScene.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = m_CursorLockModeLocked;
+            Cursor.visible = m_CursorVisibleFalse;
+            
+
+        }
+        m_player.SetActive(true);
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex -1);
+        Time.timeScale = 1;
+    }
+
 }

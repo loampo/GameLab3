@@ -41,7 +41,7 @@ public abstract class EnemyBase : MonoBehaviour
             Destroy(gameObject);
             GameObject a= Instantiate(m_fire, transform.position, Quaternion.identity); //Instantiate the animation 
             Destroy(a, 2f); //destroy the animation after 2 seconds
-            GameManager.instance.m_score += m_enemyScorePoints; //increment scoore 
+            GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 
 
 
         }

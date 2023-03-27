@@ -18,16 +18,22 @@ public class UIManager : MonoBehaviour
     public Image[] m_shieldImages; //Shield images
     public Image[] m_EnergyImagesR; //Energy images R
     public Image[] m_EnergyImagesL; //Energy images L
-
-
+    public Image[] m_lives;
+    
 
     //----------------------------------------------------------Canvas GameObject for activated Functions
     [SerializeField] private GameObject m_AmmoLaserActivate; //switch ammo count 
     [SerializeField] private GameObject m_AmmoVulcanActivate; //switch ammo count 
     [SerializeField] private GameObject m_AmmoMissleActivate; //switch ammo count 
     [SerializeField] private GameObject m_AmmoHomingMissleActivate; //switch ammo count 
+    public GameObject m_redKeyImage;
+
+    //----------------------------------------------------------Canvas Scene
     public GameObject m_lockImage;
-    public GameObject pause;
+    public GameObject m_pause;
+    public GameObject m_loseScene;  
+    public GameObject m_loseScene0Live;
+
 
     [SerializeField] private Canvas canvas;
 
