@@ -15,10 +15,15 @@ public class FinalBoss : EnemyBase
 
             transform.LookAt(m_player); //enemy always look to the player
             m_EnemyWeapon.Shooting(); //shooting system
-
+            UIManager.m_instance.m_lockImage.SetActive(true);
 
 
         }
+        else
+        {
+            UIManager.m_instance.m_lockImage.SetActive(false);
+        }
+
 
     }
 }

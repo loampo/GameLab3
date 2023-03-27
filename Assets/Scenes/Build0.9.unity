@@ -7182,6 +7182,7 @@ MonoBehaviour:
   m_AmmoVulcanActivate: {fileID: 584937164}
   m_AmmoMissleActivate: {fileID: 1972530967}
   m_AmmoHomingMissleActivate: {fileID: 376552309}
+  m_lockImage: {fileID: 1716827406}
   canvas: {fileID: 1570142817}
 --- !u!1001 &1440490998
 PrefabInstance:

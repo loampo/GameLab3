@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_AmmoVulcanActivate; //switch ammo count 
     [SerializeField] private GameObject m_AmmoMissleActivate; //switch ammo count 
     [SerializeField] private GameObject m_AmmoHomingMissleActivate; //switch ammo count 
-
+    public GameObject m_lockImage;
 
     [SerializeField] private Canvas canvas;
 
@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
         //Controllo in più
         if (m_instance == null)
             m_instance = this;
-
+        m_lockImage.SetActive(false);
     }
 
    

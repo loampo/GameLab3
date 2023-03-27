@@ -50,13 +50,14 @@ public class RedEnemy : EnemyBase
             m_agent.destination = playerPosition;
             //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
             m_EnemyWeapon.Shooting(); //shooting
-            
+            UIManager.m_instance.m_lockImage.SetActive(true);
 
 
         }
         else if (m_agent.remainingDistance < 0.2f && !m_agent.pathPending && distanceToPlayer > m_maxDistance)
         {
             MoveToNextPatrolLocation();
+            UIManager.m_instance.m_lockImage.SetActive(false);
         }
 
     }
