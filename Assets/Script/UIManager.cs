@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_AmmoMissleActivate; //switch ammo count 
     [SerializeField] private GameObject m_AmmoHomingMissleActivate; //switch ammo count 
     public GameObject m_lockImage;
+    public GameObject pause;
 
     [SerializeField] private Canvas canvas;
 
