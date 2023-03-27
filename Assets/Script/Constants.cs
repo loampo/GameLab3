@@ -18,6 +18,9 @@ public class Constants
     public const string ENERGY = "Energy";
     //for the weapons
     public const string VULCAN = "Vulcan";
+
+    //for win condition
+    public const string WIN = "winWall";
     
    
 }

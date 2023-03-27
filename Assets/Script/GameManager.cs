@@ -138,4 +138,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+   
+
+
 }
