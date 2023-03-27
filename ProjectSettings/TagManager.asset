@@ -14,6 +14,8 @@ TagManager:
   - Energy
   - AmmoMW
   - AmmoHMW
+  - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

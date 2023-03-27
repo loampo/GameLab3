@@ -18,6 +18,6 @@ public class Constants
     public const string ENERGY = "Energy";
     //for the weapons
     public const string VULCAN = "Vulcan";
-    
-   
+    public const string ENEMYBULLET = "EnemyBullet";
+    public const string PLAYERBULLET = "PlayerBullet";
 }
