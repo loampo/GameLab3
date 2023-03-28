@@ -14,14 +14,11 @@ public class CanOpen : MonoBehaviour
     {
         if (other.gameObject.CompareTag(Constants.PLAYER) && PlayerInformation.m_instance.m_RedKey == true)
         {
-            Debug.Log("open");
             animator.SetBool("Open",true);            
         }
         if (other.gameObject.CompareTag(Constants.PLAYER) && GameManager.m_instance.bossDeath==true)
         {
             animator.SetBool("BossDefeat", true);
-            
-            
         }
        
     }

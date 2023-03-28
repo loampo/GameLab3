@@ -48,7 +48,7 @@ MonoBehaviour:
   m_gunEnd: {fileID: 3024450222571527035}
   m_ammoCost: 1
   m_bulletPrefabs: {fileID: 8704220407862725328, guid: f539120e05f705e49a1d9c9607b9427e, type: 3}
-  m_speedX: 15
+  m_speedX: 30
   m_keyCode: 324
 --- !u!1 &7537840880247189727
 GameObject:

@@ -4933,7 +4933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_damage: 5
-  speed: 15
+  speed: 30
   rotationSpeed: 1
   focusDistance: 500
 --- !u!1001 &7854909679041385460

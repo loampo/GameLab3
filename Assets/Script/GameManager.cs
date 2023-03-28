@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     public int m_astronautScorePoints;
     public Camera m_mainCamera;
     public Camera m_cameraBack;
+    public Camera m_mapCamera;
 
     [SerializeField] private TextMeshProUGUI ScoreText;
+    [SerializeField] private TextMeshProUGUI ScoreFinalText;
 
     private CursorLockMode m_CursorLockModeLocked = CursorLockMode.Locked;
     private bool m_CursorVisibleFalse = true;
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         m_mainCamera.enabled = true;
+        m_cameraBack.enabled = false;
+        m_mapCamera.enabled = false;
         //Controllo in più
         if (m_instance == null)
             m_instance = this;
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         ScoreText.text = m_score.ToString();
+        ScoreFinalText.text = m_score.ToString();
         if (Input.GetKey(KeyCode.R)) //press key
         {
             m_mainCamera.enabled = false;
@@ -48,11 +53,23 @@ public class GameManager : MonoBehaviour
             UIManager.m_instance.SwitchFromBackCameraToMainCamera();
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }
+        if (Input.GetKey(KeyCode.Tab))
+        {
 
+            m_mainCamera.enabled = false;
+            m_mapCamera.enabled = true;
+            UIManager.m_instance.SwitchFromMainCameraToBack();
+        }
+        else
+        {
+            m_mainCamera.enabled = true;
+            m_mapCamera.enabled = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+        }
 
     }
 
