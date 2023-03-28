@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         m_player.SetActive(true);
     }
 
-    public void Restart()
+    public void ReturnMenu()
     {
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex -1);
         Time.timeScale = 1;
