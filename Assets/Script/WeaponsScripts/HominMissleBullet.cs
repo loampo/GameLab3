@@ -48,7 +48,7 @@ public class HominMissleBullet : Bullet
         foreach (GameObject enemy in enemies)
         {
             if (enemy.layer != 3) continue;
-            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance)
+            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance )
             {
                 target = enemy.transform;
             }
@@ -91,16 +91,30 @@ public class HominMissleBullet : Bullet
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.CompareTag(Constants.ENEMYBULLET))
+        {
+            Destroy(gameObject);
 
+        }
+        if (collision.gameObject.CompareTag(Constants.PLAYERBULLET))
+        {
+            Destroy(gameObject);
+
+        }
+        if (collision.gameObject.CompareTag(Constants.SHOOTABLEBOX))
+        {
+            collision.transform.GetComponent<ShootableBox>().DamageBulletDoor(m_damage);
+            Destroy(gameObject);
+        }
     }
 
 
-    protected override void ColorBullet()
-    {
-        Color targetColor = new Color(Color.green.r, Color.green.g, Color.green.b);
-        gameObject.GetComponent<MeshRenderer>().material.color = targetColor;
+    //protected override void ColorBullet()
+    //{
+    //    Color targetColor = new Color(Color.green.r, Color.green.g, Color.green.b);
+    //    gameObject.GetComponent<MeshRenderer>().material.color = targetColor;
 
-    }
+    //}
 }
 
 

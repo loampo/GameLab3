@@ -30,20 +30,11 @@ public abstract class EnemyBase : MonoBehaviour
         m_EnemyWeapon = GetComponent<EnemyWeapon>(); //Get the component for the weapon 
     }
 
-    public virtual void DamageBullet(int damageAmount)
-    {
-        //subtract damage amount when Damage function is called
-        m_currentHealth -= damageAmount;
-
-        //Check if health has fallen below zero
-        if (m_currentHealth <= 0)
-        {
-            Destroy(gameObject);
-            GameObject a= Instantiate(m_fire, transform.position, Quaternion.identity); //Instantiate the animation 
-            Destroy(a, 2f); //destroy the animation after 2 seconds
-            GameManager.instance.score += m_enemyScorePoints; //increment scoore 
-
-
-        }
-    }
+    public abstract void DamageBullet(int damageAmount);
+    
 }
+interface IDamageable
+{
+    
+}
+

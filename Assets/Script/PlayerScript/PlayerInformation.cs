@@ -32,6 +32,9 @@ public class PlayerInformation : MonoBehaviour
     [Range(1f, 20f)]
     public int m_maxAmmoHomingMissle; //maxAmmo for Homing missle
 
+    [HideInInspector] public int m_lives;
+    public Transform m_respawnPoint;
+
 
     //----------------------------------------------------------Collectible Attributs
     [Range(1f, 20f)]
@@ -44,11 +47,14 @@ public class PlayerInformation : MonoBehaviour
     public int m_restoreAmmoMissle; //how much Missle ammo can restore 
     [Range(1f, 20f)]
     public int m_restoreAmmoHomingMissle; //how much Homing missle ammo can restore 
-    bool m_AmmoLaserCollectible; //to figure out which ammunition to restock
-    bool m_RedKey; // red key to open the last gate 
+    [HideInInspector] public bool m_ammoLaserCollectible; //to figure out which ammunition to restock
+    [HideInInspector] public bool m_ammoMissleCollectible =true; //to figure out which amminition to restock
+    
+    public bool m_RedKey; // red key to open the last gate 
     [HideInInspector]
     public bool is_EnergyPickUp;
 
+    
 
 
 
@@ -65,7 +71,10 @@ public class PlayerInformation : MonoBehaviour
         
     }
 
-    
+    private void Start()
+    {
+        m_lives = 3;
+    }
     //write starting ammo
     private void Update()
     {
@@ -78,21 +87,149 @@ public class PlayerInformation : MonoBehaviour
         int EnergyINT = Mathf.RoundToInt(m_energy);
         UIManager.m_instance.m_energyCount.text = EnergyINT.ToString();
 
+        
 
+        //Shield Image script
+        if (m_healt >= 75)
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = true;
+            UIManager.m_instance.m_shieldImages[2].enabled = true;
+            UIManager.m_instance.m_shieldImages[3].enabled = true;
+        }
+        else if (m_healt >= 50)
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = true;
+            UIManager.m_instance.m_shieldImages[2].enabled = true;
+            UIManager.m_instance.m_shieldImages[3].enabled = false;
+        }
+        else if (m_healt >= 25)
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = true;
+            UIManager.m_instance.m_shieldImages[2].enabled = false;
+            UIManager.m_instance.m_shieldImages[3].enabled = false;
+        }
+        else
+        {
+            UIManager.m_instance.m_shieldImages[0].enabled = true;
+            UIManager.m_instance.m_shieldImages[1].enabled = false;
+            UIManager.m_instance.m_shieldImages[2].enabled = false;
+            UIManager.m_instance.m_shieldImages[3].enabled = false;
+        }
 
+        //Energy Bar
+        for (int i = 0; i < 11; i++)
+        {
+            UIManager.m_instance.m_EnergyImagesR[i].enabled = false;
+            UIManager.m_instance.m_EnergyImagesL[i].enabled = false;
+        }
+        if (m_energy >= 90)
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 81)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 72)
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 63)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 54)
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 45)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 36)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 27)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 18)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy >= 9)
+        {            
+            for (int i = 0; i < 2; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else if (m_energy > 0)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                UIManager.m_instance.m_EnergyImagesR[i].enabled = true;
+                UIManager.m_instance.m_EnergyImagesL[i].enabled = true;
+            }
+        }
+        else
+        {
+            //Use the for before
+        }        
     }
 
 
-    public void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider collider)
     {
         CollisionDetection(collider);
     }
 
-    protected virtual void CollisionDetection(Collider collider)
+    private void CollisionDetection(Collider collider)
     {
         if (collider.gameObject.CompareTag(Constants.AMMOFW)) //if i collider with something with that tag for the ammo
         {
-            if (!m_AmmoLaserCollectible) //if the weapon that i equiped isn't m_AmmoLaserCollectible it means is vulcan weapon 
+            if (!m_ammoLaserCollectible) //if the weapon that i equiped isn't m_AmmoLaserCollectible it means is vulcan weapon 
             {
                 if (m_ammoVulcan >= m_maxAmmoVulcan) //if i have more ammo that i can have 
                 {
@@ -150,13 +287,14 @@ public class PlayerInformation : MonoBehaviour
         if (collider.gameObject.CompareTag(Constants.ASTRONAUT))  //if i collider with something with that tag for the ASTRONAUT
         {
             Destroy(collider.gameObject); //destroy
-            GameManager.instance.score += GameManager.instance.astronautScorePoints; // add points to the GameManager 
+            GameManager.m_instance.m_score += GameManager.m_instance.m_astronautScorePoints; // add points to the GameManager 
 
         }
         if (collider.gameObject.CompareTag(Constants.REDKEY))  //if i collider with something with that tag REDKEY
         {
             Destroy(collider.gameObject); //destroy
-            m_RedKey = true; 
+            m_RedKey = true;
+            UIManager.m_instance.m_redKeyImage.SetActive(true);
 
         }
         if (collider.gameObject.CompareTag(Constants.ENERGY))
@@ -175,35 +313,60 @@ public class PlayerInformation : MonoBehaviour
             }
         }
         
+
+
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag(Constants.CHARGESTATION))
+        {
+
+            if (m_energy < 100) Invoke("ChargeStation",0f);
+            
+            
+
+
+        }
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromLaserToVulcan()
     {
+        m_ammoLaserCollectible = false;
         UIManager.m_instance.SwitchAmmoFromLaserToVulcan();
-        m_AmmoLaserCollectible = false;
+        
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromVulcanToLaser()
     {
-        m_AmmoLaserCollectible = true;
+        m_ammoLaserCollectible = true;
         UIManager.m_instance.SwitchAmmoFromVulcanToLaser();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromMissleToHomingMissle()
     {
-        
+        m_ammoMissleCollectible = false;
         UIManager.m_instance.SwitchAmmoFromMissleToHomingMissle();
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromHomingMissleToMissle()
     {
-        
+        m_ammoMissleCollectible = true;
         UIManager.m_instance.SwitchAmmoFromHomingMissleToMissle();
     }
+
+
+    public void ChargeStation()
+    {
+        m_energy +=   5 * Time.deltaTime;
+    }
+
+
 
     //funcion for taking damage from enemy bullet
     public void Damage(int damageAmount)
@@ -211,11 +374,30 @@ public class PlayerInformation : MonoBehaviour
         m_healt -= damageAmount;
 
         //Check if health has fallen below zero
-        if (m_healt <= 0)
+        if (m_healt <= 0 )
         {
-            Destroy(gameObject);
-
+            if (m_lives > 0)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+                UIManager.m_instance.m_loseScene.SetActive(true);
+                gameObject.SetActive(false);
+                transform.position = new Vector3(m_respawnPoint.transform.position.x, m_respawnPoint.transform.position.y, m_respawnPoint.transform.position.z);
+            }
+            else if (m_lives <= 0 )
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Time.timeScale = 0;
+                UIManager.m_instance.m_loseScene0Live.SetActive(true);
+                gameObject.SetActive(false);
+            }
+            
+            
+            
         }
+        
 
     }
 

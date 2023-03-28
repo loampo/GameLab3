@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_fireRate: 0.5
-  m_ammoCost: 1
-  m_bulletPrefabs: {fileID: 5501603037502310440, guid: 791962cc94b789642b8a2f3373f2af03, type: 3}
-  m_speedX: 15
-  m_keyCode: 324
   m_gunEnd: {fileID: 631275510555737587}
+  m_ammoCost: 1
+  m_bulletPrefabs: {fileID: 8704220407862725328, guid: 2eb59b30f80caaf4da1096aff163a51a, type: 3}
+  m_speedX: 30
+  m_keyCode: 324
 --- !u!1 &5305370758927930967
 GameObject:
   m_ObjectHideFlags: 0

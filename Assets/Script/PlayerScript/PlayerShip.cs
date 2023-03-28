@@ -9,6 +9,7 @@ public class PlayerShip : MonoBehaviour
     public float forwardSpeed = 100f;
     public float sidewaysSpeed = 100f;
     public float rotationSpeed = 100f;
+    public float mouseSensitivity = 1f;
     public float verticalSpeed = 100f;
     public float maxSpeed = 200f;
 
@@ -69,7 +70,7 @@ public class PlayerShip : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        transform.Rotate(Vector3.up, mouseX * rotationSpeed * Time.deltaTime, Space.World);
+        transform.Rotate(Vector3.up, mouseX * mouseSensitivity * Time.deltaTime, Space.Self);
 
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -78,11 +79,11 @@ public class PlayerShip : MonoBehaviour
 
         if (invertMouse)
         {
-            transform.Rotate(Vector3.left, -mouseY * rotationSpeed * Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.left, -mouseY * mouseSensitivity * Time.deltaTime, Space.Self);
         }
         else
         {
-            transform.Rotate(Vector3.left, mouseY * rotationSpeed * Time.deltaTime, Space.Self);
+            transform.Rotate(Vector3.left, mouseY * mouseSensitivity * Time.deltaTime, Space.Self);
         }
 
         // Rotate Z axis

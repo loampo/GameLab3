@@ -14,6 +14,11 @@ TagManager:
   - Energy
   - AmmoMW
   - AmmoHMW
+  - EnemyBullet
+  - PlayerBullet
+  - AmmoSW
+  - ShootableBox
+  - Charge
   layers:
   - Default
   - TransparentFX
@@ -21,7 +26,7 @@ TagManager:
   - Homingmissle
   - Water
   - UI
-  - 
+  - Map
   - 
   - 
   - 

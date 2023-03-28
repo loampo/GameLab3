@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class FirstBullet : Bullet
 {
-    private void Awake()
-    {
-        ColorBullet();
-    }
+   
 
    
     protected override void CollisionDetection(Collision collision)
@@ -22,15 +19,24 @@ public class FirstBullet : Bullet
             Destroy(gameObject);
             
         }
+        if (collision.gameObject.CompareTag(Constants.ENEMYBULLET))
+        {
+            Destroy(gameObject);
+
+        }
+        if (collision.gameObject.CompareTag(Constants.PLAYERBULLET))
+        {
+            Destroy(gameObject);
+
+        }
+        if (collision.gameObject.CompareTag(Constants.SHOOTABLEBOX))
+        {
+            collision.transform.GetComponent<ShootableBox>().DamageBulletDoor(m_damage);
+            Destroy(gameObject);
+        }
+
     }
 
 
 
-
-    protected override void ColorBullet()
-    {
-        Color targetColor = new Color(Color.green.r, Color.green.g, Color.green.b);
-        gameObject.GetComponent<MeshRenderer>().material.color = targetColor;
-
-    }
 }

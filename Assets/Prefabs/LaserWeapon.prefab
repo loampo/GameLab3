@@ -78,8 +78,8 @@ MonoBehaviour:
   m_fireRate: 0.25
   m_gunEnd: {fileID: 6446808870911947828}
   m_ammoCost: 0
-  m_bulletPrefabs: {fileID: 4411491088418869557, guid: 9eca37eb68ae99647b8397afd52c41aa, type: 3}
-  m_speedX: 15
+  m_bulletPrefabs: {fileID: 4411491088418869557, guid: 956c901cb02a3a841900b6377d47ecdc, type: 3}
+  m_speedX: 50
   m_keyCode: 323
   m_gunEnd1: {fileID: 2754660181019508706}
   m_laserCost: 0.34
