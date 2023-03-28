@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour, IDamageable
 {
     public int m_damage;
 
@@ -23,8 +23,7 @@ public abstract class Bullet : MonoBehaviour
     
 
 
-    protected abstract void ColorBullet();
-    
+    //protected abstract void ColorBullet();
 
-
+  
 }

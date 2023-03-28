@@ -33,3 +33,8 @@ public abstract class EnemyBase : MonoBehaviour
     public abstract void DamageBullet(int damageAmount);
     
 }
+interface IDamageable
+{
+    
+}
+

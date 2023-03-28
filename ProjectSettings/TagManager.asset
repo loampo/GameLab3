@@ -16,6 +16,8 @@ TagManager:
   - AmmoHMW
   - EnemyBullet
   - PlayerBullet
+  - AmmoSW
+  - ShootableBox
   layers:
   - Default
   - TransparentFX

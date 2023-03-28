@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class RedEnemy : EnemyBase
+public class RedEnemy : EnemyBase, IDamageable
 {
     
     public Transform m_patrolRoute;  //the rout for the enemy 
     public List<Transform> m_locations; // location for the enemy 
     private int M_LocationIndex = 0; //location index
     public NavMeshAgent m_agent; //agent 
-
+    public List<GameObject> drops = new List<GameObject>();
     private Vector3 m_Offset = new Vector3(0f, 0f, 5f);
     //private Vector3 m_Offset2 = new Vector3(0f, 5f, 0f);
     
@@ -83,7 +83,7 @@ public class RedEnemy : EnemyBase
 
 
 
-    public override void DamageBullet(int damageAmount)
+    public override void  DamageBullet(int damageAmount)
     {
         //subtract damage amount when Damage function is called
         m_currentHealth -= damageAmount;
@@ -91,7 +91,9 @@ public class RedEnemy : EnemyBase
         //Check if health has fallen below zero
         if (m_currentHealth <= 0)
         {
+            int witchDrops = Random.Range(0, drops.Count);
             Destroy(gameObject);
+            GameObject b = Instantiate(drops[witchDrops], transform.position, Quaternion.identity);
             GameObject a = Instantiate(m_fire, transform.position, Quaternion.identity); //Instantiate the animation 
             Destroy(a, 2f); //destroy the animation after 2 seconds
             GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 

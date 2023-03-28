@@ -96,15 +96,25 @@ public class HominMissleBullet : Bullet
             Destroy(gameObject);
 
         }
+        if (collision.gameObject.CompareTag(Constants.PLAYERBULLET))
+        {
+            Destroy(gameObject);
+
+        }
+        if (collision.gameObject.CompareTag(Constants.SHOOTABLEBOX))
+        {
+            collision.transform.GetComponent<ShootableBox>().DamageBulletDoor(m_damage);
+            Destroy(gameObject);
+        }
     }
 
 
-    protected override void ColorBullet()
-    {
-        Color targetColor = new Color(Color.green.r, Color.green.g, Color.green.b);
-        gameObject.GetComponent<MeshRenderer>().material.color = targetColor;
+    //protected override void ColorBullet()
+    //{
+    //    Color targetColor = new Color(Color.green.r, Color.green.g, Color.green.b);
+    //    gameObject.GetComponent<MeshRenderer>().material.color = targetColor;
 
-    }
+    //}
 }
 
 

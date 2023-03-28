@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinalBoss : EnemyBase
+public class FinalBoss : EnemyBase, IDamageable
 {
     
 
