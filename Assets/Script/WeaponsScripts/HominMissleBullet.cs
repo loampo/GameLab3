@@ -48,7 +48,7 @@ public class HominMissleBullet : Bullet
         foreach (GameObject enemy in enemies)
         {
             if (enemy.layer != 3) continue;
-            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance)
+            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance )
             {
                 target = enemy.transform;
             }

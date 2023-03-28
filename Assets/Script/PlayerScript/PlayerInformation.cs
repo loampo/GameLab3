@@ -54,6 +54,7 @@ public class PlayerInformation : MonoBehaviour
     [HideInInspector]
     public bool is_EnergyPickUp;
 
+    
 
 
 
@@ -85,6 +86,8 @@ public class PlayerInformation : MonoBehaviour
         UIManager.m_instance.m_healtCount.text = m_healt.ToString();
         int EnergyINT = Mathf.RoundToInt(m_energy);
         UIManager.m_instance.m_energyCount.text = EnergyINT.ToString();
+
+        
 
         //Shield Image script
         if (m_healt >= 75)
@@ -217,12 +220,12 @@ public class PlayerInformation : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider collider)
     {
         CollisionDetection(collider);
     }
 
-    protected virtual void CollisionDetection(Collider collider)
+    private void CollisionDetection(Collider collider)
     {
         if (collider.gameObject.CompareTag(Constants.AMMOFW)) //if i collider with something with that tag for the ammo
         {
@@ -309,9 +312,23 @@ public class PlayerInformation : MonoBehaviour
                 
             }
         }
+        
 
-       
 
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag(Constants.CHARGESTATION))
+        {
+
+            if (m_energy < 100) Invoke("ChargeStation",0f);
+            
+            
+
+
+        }
     }
 
     //i use this funcion for Switching the Canvas information about ammo 
@@ -342,6 +359,14 @@ public class PlayerInformation : MonoBehaviour
         m_ammoMissleCollectible = true;
         UIManager.m_instance.SwitchAmmoFromHomingMissleToMissle();
     }
+
+
+    public void ChargeStation()
+    {
+        m_energy +=   5 * Time.deltaTime;
+    }
+
+
 
     //funcion for taking damage from enemy bullet
     public void Damage(int damageAmount)

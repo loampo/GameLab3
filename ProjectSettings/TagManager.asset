@@ -18,6 +18,7 @@ TagManager:
   - PlayerBullet
   - AmmoSW
   - ShootableBox
+  - Charge
   layers:
   - Default
   - TransparentFX

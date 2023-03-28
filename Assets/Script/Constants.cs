@@ -17,6 +17,7 @@ public class Constants
     public const string ASTRONAUT = "Astronaut";
     public const string REDKEY = "RedKey";
     public const string ENERGY = "Energy";
+    public const string CHARGESTATION = "Charge";
     //for the weapons
     public const string VULCAN = "Vulcan";
     public const string ENEMYBULLET = "EnemyBullet";
