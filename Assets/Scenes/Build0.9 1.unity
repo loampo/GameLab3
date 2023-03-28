@@ -620,6 +620,7 @@ MonoBehaviour:
   m_cameraBack: {fileID: 1734564513}
   ScoreText: {fileID: 946223714}
   m_player: {fileID: 269670675}
+  bossDeath: 0
 --- !u!4 &124587927
 Transform:
   m_ObjectHideFlags: 0
@@ -4419,7 +4420,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21218
+  m_Name: pb_Mesh18452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4908,7 +4909,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3314
+  m_Name: pb_Mesh-1956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5182,7 +5183,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3302
+  m_Name: pb_Mesh-1944
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5516,8 +5517,9 @@ GameObject:
   - component: {fileID: 951402372}
   - component: {fileID: 951402371}
   - component: {fileID: 951402370}
-  - component: {fileID: 951402369}
   - component: {fileID: 951402373}
+  - component: {fileID: 951402374}
+  - component: {fileID: 951402369}
   m_Layer: 0
   m_Name: ExitDoor
   m_TagString: Wall
@@ -5535,24 +5537,24 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.024074731, z: -0, w: 0.99971026}
   m_LocalPosition: {x: -79.27779, y: -104.4625, z: -45.48557}
   m_LocalScale: {x: 1, y: 9.669358, z: 14.142755}
-  m_Children: []
+  m_Children:
+  - {fileID: 965475580}
   m_Father: {fileID: 1071327746}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -2.759, z: 0}
---- !u!64 &951402369
-MeshCollider:
+--- !u!65 &951402369
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951402367}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 827216782}
+  serializedVersion: 2
+  m_Size: {x: 25.108997, y: 0.99999994, z: 1.7981771}
+  m_Center: {x: -12.554571, y: 0.49999997, z: -0.4830136}
 --- !u!33 &951402370
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -5837,6 +5839,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &951402374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951402367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656b626133116ef438f209e63f43a616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 951402373}
 --- !u!1 &953906001
 GameObject:
   m_ObjectHideFlags: 0
@@ -5870,6 +5885,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &965475577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965475580}
+  - component: {fileID: 965475579}
+  - component: {fileID: 965475578}
+  m_Layer: 0
+  m_Name: WIN
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965475578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965475577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2db906567a0d5b4aabd87da284a662e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &965475579
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965475577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.542446, y: 1.395147, z: 1}
+  m_Center: {x: -5.7712297, y: -0.19757453, z: 2.0800339e-10}
+--- !u!4 &965475580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965475577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 50.46745, y: 1.8121676, z: -0.7768247}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 951402368}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -2.759, z: 0}
 --- !u!1 &977369721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6181,7 +6253,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3292
+  m_Name: pb_Mesh-1934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8605,7 +8677,7 @@ MonoBehaviour:
   m_pause: {fileID: 383550710}
   m_loseScene: {fileID: 1701838581}
   m_loseScene0Live: {fileID: 1552105339}
-  m_winScene: {fileID: 0}
+  m_winScene: {fileID: 807456378}
   canvas: {fileID: 1570142817}
 --- !u!1 &1437426848
 GameObject:
@@ -10162,28 +10234,6 @@ NavMeshAgent:
   m_BaseOffset: 4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1657963083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657963081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fecda15f46c6fb428d7428898934a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_currentHealth: 10
-  m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
-  m_enemyScorePoints: 100
-  m_maxDistance: 70
-  m_player: {fileID: 543450653410029710}
-  m_patrolRoute: {fileID: 528266553}
-  m_locations: []
-  m_agent: {fileID: 1657963082}
-  speedUpDown: 1
-  distanceUpDown: 0.2
 --- !u!114 &1657963084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10202,6 +10252,29 @@ MonoBehaviour:
   m_gunEndWeapon: {fileID: 442211222}
   m_weapon: {fileID: 324940087}
   m_gunEndPrimaryHandEnemy: {fileID: 324940088}
+--- !u!114 &1657963088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657963081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef063175e645c9c4cbd65b520cb575f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentHealth: 10
+  m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
+  m_enemyScorePoints: 100
+  m_maxDistance: 70
+  m_player: {fileID: 543450653410029710}
+  m_patrolRoute: {fileID: 528266553}
+  m_locations: []
+  m_agent: {fileID: 1657963082}
+  key: {fileID: 1092846373250970678, guid: 0dd73261400ae954996aea84a0cd88e2, type: 3}
+  speedUpDown: 1
+  distanceUpDown: 0.2
 --- !u!1001 &1684026989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10979,7 +11052,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1825955768}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 124587926}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1825955768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11342,7 +11427,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-3282
+  m_Name: pb_Mesh-1924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

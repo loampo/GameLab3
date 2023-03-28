@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinWall : MonoBehaviour
+public class WinScript : MonoBehaviour
 {
     private CursorLockMode m_CursorLockModeNone = CursorLockMode.None;
     private bool m_CursorVisibleTrue = true;
+    
 
 
-    public void OnTriggerEnter(Collider collider)
+
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collider.gameObject.CompareTag(Constants.WIN))  //if i collider with something with that tag REDKEY
+        if (other.gameObject.CompareTag(Constants.PLAYER))
         {
             Time.timeScale = 0;
             UIManager.m_instance.m_winScene.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            
-            
-
-
+            Cursor.lockState = m_CursorLockModeNone;
+            Cursor.visible = m_CursorVisibleTrue;
         }
     }
 }

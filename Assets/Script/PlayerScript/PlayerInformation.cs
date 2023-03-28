@@ -310,17 +310,7 @@ public class PlayerInformation : MonoBehaviour
             }
         }
 
-        if (collider.gameObject.CompareTag(Constants.WIN))  //if i collider with something with that tag Win
-        {
-            Time.timeScale = 0;
-            UIManager.m_instance.m_winScene.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-
-
-
-        }
+       
 
     }
 

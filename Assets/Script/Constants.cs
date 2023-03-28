@@ -8,7 +8,6 @@ public class Constants
     public const string ENEMY = "Enemy";
     public const string WALL = "Wall";
     public const string PLAYER = "Player";
-    public const string WIN = "WinWall";
     //for the collectible
     public const string AMMOFW = "AmmoFW";
     public const string AMMOMW = "AmmoMW";

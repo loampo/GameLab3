@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject m_player;
 
-
+    public bool bossDeath;
 
     public static GameManager m_instance;
 
