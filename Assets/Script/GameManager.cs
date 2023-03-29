@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     public bool bossDeath;
 
+    public PlayerShip playerShip;
+
     public static GameManager m_instance;
 
     private void Awake()
@@ -38,6 +40,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        playerShip.GetComponent<PlayerShip>();
+    }
 
     private void Update()
     {
@@ -47,47 +53,17 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && !m_mapCameraActive && Time.timeScale == 1) //press key
         {
-            if (!m_cameraBackActive)
-            {
-                m_cameraBackActive = true;
-                m_cameraBack.enabled = true;
-                m_mainCamera.enabled = false;
-                m_mapCamera.enabled = false;
-                UIManager.m_instance.SwitchFromMainCameraToBack();
-            }
-            else
-            {
-                m_cameraBackActive = false;
-                m_cameraBack.enabled = false;
-                m_mainCamera.enabled = true;
-                m_mapCamera.enabled = false;
-                UIManager.m_instance.SwitchFromBackCameraToMainCamera();
-            }
+            BackCamera();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !m_mapCameraActive && Time.timeScale == 1)
+        if (Input.GetKeyDown(KeyCode.P) && !m_cameraBackActive && !m_mapCameraActive && Time.timeScale == 1)
         {
             Pause();
         }
+
         if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1)
         {
-            if (!m_mapCameraActive)
-            {
-                m_mapCameraActive = true;
-                m_mapCamera.enabled = true;
-                m_mainCamera.enabled = false;
-                m_cameraBack.enabled = false;
-                UIManager.m_instance.SwitchFromMainCameraToBack();
-            }
-            else
-            {
-                m_mapCameraActive = false;
-                m_cameraBackActive = false;
-                m_mapCamera.enabled = false;
-                m_mainCamera.enabled = true;
-                m_cameraBack.enabled = false;
-                UIManager.m_instance.SwitchFromBackCameraToMainCamera();
-            }
+            MapCamera();
         }
     }
 
@@ -104,6 +80,7 @@ public class GameManager : MonoBehaviour
             m_mainCamera.enabled = true;
             m_mapCameraActive = false;
             UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+            
         }
     }
 
@@ -175,7 +152,52 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-   
+   private void MapCamera()
+    {
+        if (!m_mapCameraActive)
+        {
+            playerShip.enabled = false;
+            m_mapCameraActive = true;
+            m_mapCamera.enabled = true;
+            m_mainCamera.enabled = false;
+            m_cameraBack.enabled = false;
+            UIManager.m_instance.SwitchFromMainCameraToBack();
+        }
+        else
+        {
+            playerShip.enabled = true;
+            m_mapCameraActive = false;
+            m_cameraBackActive = false;
+            m_mapCamera.enabled = false;
+            m_mainCamera.enabled = true;
+            m_cameraBack.enabled = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+        }
+    }
+
+    private void BackCamera()
+    {
+        if (!m_cameraBackActive)
+        {
+            m_cameraBackActive = true;
+            m_cameraBack.enabled = true;
+            m_mainCamera.enabled = false;
+            m_mapCamera.enabled = false;
+            UIManager.m_instance.SwitchFromMainCameraToBack();
+        }
+        else
+        {
+            m_cameraBackActive = false;
+            m_cameraBack.enabled = false;
+            m_mainCamera.enabled = true;
+            m_mapCamera.enabled = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+        }
+    }
+
+
+
+
 
 
 }

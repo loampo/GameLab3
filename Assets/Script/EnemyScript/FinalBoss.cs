@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FinalBoss : EnemyBase, IDamageable
 {
-    
+    public GameObject fakeBoss;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +15,7 @@ public class FinalBoss : EnemyBase, IDamageable
         {
 
             transform.LookAt(m_player); //enemy always look to the player
-            m_EnemyWeapon.Shooting(); //shooting system
+            m_EnemyWeapon.ShootingBase(); //shooting system
             UIManager.m_instance.m_lockImage.SetActive(true);
             if (m_currentHealth <= 0) GameManager.m_instance.bossDeath = true;
 
@@ -42,7 +42,7 @@ public class FinalBoss : EnemyBase, IDamageable
             Destroy(a, 2f); //destroy the animation after 2 seconds
             GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 
             GameManager.m_instance.bossDeath = true;
-
+            Destroy(fakeBoss);
         }
     }
 }

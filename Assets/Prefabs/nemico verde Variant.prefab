@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831440538}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: -0.104, z: 0.396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5983342925060971343}
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_currentHealth: 10
   m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   m_enemyScorePoints: 100
-  m_maxDistance: 70
+  m_maxDistance: 50
   m_player: {fileID: 0}
   m_patrolRoute: {fileID: 0}
   m_locations: []
@@ -195,6 +195,6 @@ MonoBehaviour:
   - {fileID: 6548288312588448019, guid: 938b1d5d006188b45b22d87a3b4d12f3, type: 3}
   - {fileID: 2477083164435812424, guid: 31047855b972e6743afc4be551c2348c, type: 3}
   - {fileID: 8424144058544679828, guid: a0d83d1e762f9b7468f35c75c9aff638, type: 3}
-  - {fileID: -1514658689344034693, guid: 8d2f841c0a683c64fa89a31bc93fd635, type: 3}
+  - {fileID: 3956521904169631421, guid: ee36ea804f4ee0b469a2d68d85366551, type: 3}
   speedUpDown: 1
   distanceUpDown: 0.2

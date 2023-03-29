@@ -49,7 +49,7 @@ public class RedEnemy : EnemyBase, IDamageable
             transform.LookAt(m_player); //enemy always look to the player
             m_agent.destination = playerPosition;
             //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
-            m_EnemyWeapon.Shooting(); //shooting
+            m_EnemyWeapon.ShootingBase(); //shooting
             UIManager.m_instance.m_lockImage.SetActive(true);
 
 
