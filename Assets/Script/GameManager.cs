@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Camera m_cameraBack;
     public Camera m_mapCamera;
     private bool m_mapCameraActive = false;
+    private bool m_cameraBackActive = false;
 
     [SerializeField] private TextMeshProUGUI ScoreText;
     [SerializeField] private TextMeshProUGUI ScoreFinalText;
@@ -44,19 +45,24 @@ public class GameManager : MonoBehaviour
         ScoreFinalText.text = m_score.ToString();
 
 
-        if (Input.GetKeyDown(KeyCode.R) && Time.timeScale == 1) //press key
+        if (Input.GetKeyDown(KeyCode.R) && !m_mapCameraActive && Time.timeScale == 1) //press key
         {
-            m_cameraBack.enabled = true;
-            m_mainCamera.enabled = false;
-            m_mapCamera.enabled = false;
-            UIManager.m_instance.SwitchFromMainCameraToBack();
-        }
-        else if (Input.GetKeyUp(KeyCode.R) && Time.timeScale == 1)
-        {
-            m_cameraBack.enabled = false;
-            m_mainCamera.enabled = true;
-            m_mapCamera.enabled = false;
-            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+            if (!m_cameraBackActive)
+            {
+                m_cameraBackActive = true;
+                m_cameraBack.enabled = true;
+                m_mainCamera.enabled = false;
+                m_mapCamera.enabled = false;
+                UIManager.m_instance.SwitchFromMainCameraToBack();
+            }
+            else
+            {
+                m_cameraBackActive = false;
+                m_cameraBack.enabled = false;
+                m_mainCamera.enabled = true;
+                m_mapCamera.enabled = false;
+                UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && !m_mapCameraActive && Time.timeScale == 1)
@@ -76,6 +82,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 m_mapCameraActive = false;
+                m_cameraBackActive = false;
                 m_mapCamera.enabled = false;
                 m_mainCamera.enabled = true;
                 m_cameraBack.enabled = false;
