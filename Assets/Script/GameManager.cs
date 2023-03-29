@@ -42,14 +42,14 @@ public class GameManager : MonoBehaviour
     {
         ScoreText.text = m_score.ToString();
         ScoreFinalText.text = m_score.ToString();
-        if (Input.GetKeyDown(KeyCode.R)) //press key
+        if (Input.GetKeyDown(KeyCode.R) && Time.timeScale == 1) //press key
         {
             m_cameraBack.enabled = true;
             m_mainCamera.enabled = false;
             m_mapCamera.enabled = false;
             UIManager.m_instance.SwitchFromMainCameraToBack();
         }
-        else if (Input.GetKeyUp(KeyCode.R))
+        else if (Input.GetKeyUp(KeyCode.R) && Time.timeScale == 1)
         {
             m_cameraBack.enabled = false;
             m_mainCamera.enabled = true;
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         {
             Pause();
         }
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1)
         {
             if (!m_mapCameraActive)
             {
@@ -92,7 +92,9 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = m_CursorLockModeLocked;
             Cursor.visible =m_CursorVisibleFalse;
             m_player.SetActive(true);
-            m_mainCamera.enabled = false;
+            m_mainCamera.enabled = true;
+            m_mapCameraActive = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
         }
     }
 
@@ -112,7 +114,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = m_CursorLockModeNone; //Impedisce al cursore di uscire dallo schermo
         Cursor.visible = m_CursorVisibleTrue; // Nasconde il cursore del mouse
         m_player.SetActive(false);
-        m_mainCamera.enabled = true;
+        //m_mainCamera.enabled = true;
     }
 
     public void Retry()
