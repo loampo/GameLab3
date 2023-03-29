@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     {
         ScoreText.text = m_score.ToString();
         ScoreFinalText.text = m_score.ToString();
+
+
         if (Input.GetKeyDown(KeyCode.R) && Time.timeScale == 1) //press key
         {
             m_cameraBack.enabled = true;
@@ -57,7 +59,7 @@ public class GameManager : MonoBehaviour
             UIManager.m_instance.SwitchFromBackCameraToMainCamera();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !m_mapCameraActive && Time.timeScale == 1)
         {
             Pause();
         }
