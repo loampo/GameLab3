@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fecda15f46c6fb428d7428898934a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentHealth: 10
+  m_currentHealth: 40
   m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   m_enemyScorePoints: 100
   m_maxDistance: 50
