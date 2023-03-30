@@ -321,6 +321,7 @@ MonoBehaviour:
   - {fileID: 8424144058544679828, guid: a0d83d1e762f9b7468f35c75c9aff638, type: 3}
   - {fileID: 6548288312588448019, guid: 938b1d5d006188b45b22d87a3b4d12f3, type: 3}
   - {fileID: 3956521904169631421, guid: ee36ea804f4ee0b469a2d68d85366551, type: 3}
+  - {fileID: 2263754720478777995, guid: b3c5e144b6b76a842aef2c85f6b6279b, type: 3}
   speedUpDown: 1
   distanceUpDown: 0.2
 --- !u!135 &8109936715954692758
