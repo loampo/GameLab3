@@ -21,8 +21,8 @@ public class RedEnemy : EnemyBase, IDamageable
     public float speedUpDown = 1;
     public float distanceUpDown = 1;
 
-  
 
+    private bool m_isLock;
 
 
     private void Start()
@@ -43,22 +43,44 @@ public class RedEnemy : EnemyBase, IDamageable
 
         float distanceToPlayer = Vector3.Distance(m_player.position, transform.position); //distance from the player 
         Vector3 playerPosition = m_player.position - m_Offset; //distance from enemy to player + offset
-        if (distanceToPlayer < m_maxDistance)
+
+        if (distanceToPlayer < m_maxDistance )
         {
+            if (!m_isLock)
+            {
+                transform.LookAt(m_player); //enemy always look to the player
+                m_agent.destination = playerPosition;
+                //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
+                m_EnemyWeapon.ShootingBase(); //shooting
+                UIManager.m_instance.m_lockImage.SetActive(true);
+                m_isLock = true;
+            }
+            else
+            {
+                transform.LookAt(m_player); //enemy always look to the player
+                m_agent.destination = playerPosition;
+                //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
+                m_EnemyWeapon.ShootingBase(); //shooting
+                UIManager.m_instance.m_lockImage.SetActive(true);
+            }
             
-            transform.LookAt(m_player); //enemy always look to the player
-            m_agent.destination = playerPosition;
-            //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
-            m_EnemyWeapon.ShootingBase(); //shooting
-            UIManager.m_instance.m_lockImage.SetActive(true);
 
 
         }
         else if (m_agent.remainingDistance < 0.2f && !m_agent.pathPending && distanceToPlayer > m_maxDistance)
         {
-            MoveToNextPatrolLocation();
-            UIManager.m_instance.m_lockImage.SetActive(false);
-
+            if(!m_isLock)
+            {
+                MoveToNextPatrolLocation();
+                UIManager.m_instance.m_lockImage.SetActive(false);
+            }
+            else
+            {
+                MoveToNextPatrolLocation();
+                UIManager.m_instance.m_lockImage.SetActive(false);
+                m_isLock = false;
+            }   
+ 
         }
 
     }
@@ -98,7 +120,7 @@ public class RedEnemy : EnemyBase, IDamageable
             GameObject a = Instantiate(m_fire, transform.position, Quaternion.identity); //Instantiate the animation 
             Destroy(a, 2f); //destroy the animation after 2 seconds
             GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 
-
+            m_isLock = true;
 
         }
     }
