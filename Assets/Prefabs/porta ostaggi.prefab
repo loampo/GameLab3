@@ -82,7 +82,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentHealth: 4
+  m_effect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   animator: {fileID: 3022331379898889765}
+  m_doorLocation: {fileID: 3349485281296428602}
+  m_needEffect: 1
 --- !u!1 &3022331380034687457
 GameObject:
   m_ObjectHideFlags: 0
