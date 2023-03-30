@@ -4934,7 +4934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damage: 10
   speed: 30
-  rotationSpeed: 10000
+  rotationSpeed: 5000
   focusDistance: 50
 --- !u!1001 &7854909679041385460
 PrefabInstance:

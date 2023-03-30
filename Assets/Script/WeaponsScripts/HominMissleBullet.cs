@@ -47,12 +47,16 @@ public class HominMissleBullet : Bullet
         target = null;
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.layer != 3) continue;
+            
             if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance)
             {
                 target = enemy.transform;
             }
-            else
+            else if (!target && Vector3.Distance(transform.position, enemy.transform.position) > focusDistance)
+            {
+                this.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+            }
+            else 
             {
                 float targetDistance = Vector3.Distance(transform.position, target.transform.position);
                 float enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
@@ -64,6 +68,10 @@ public class HominMissleBullet : Bullet
                 }
 
             }
+            
+            
+
+
         }
     }
 
