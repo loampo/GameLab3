@@ -21,7 +21,7 @@ public class RedEnemy : EnemyBase, IDamageable
     public float speedUpDown = 1;
     public float distanceUpDown = 1;
 
-    
+  
 
 
 
@@ -58,6 +58,7 @@ public class RedEnemy : EnemyBase, IDamageable
         {
             MoveToNextPatrolLocation();
             UIManager.m_instance.m_lockImage.SetActive(false);
+
         }
 
     }

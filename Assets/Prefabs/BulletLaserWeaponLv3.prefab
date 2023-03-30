@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 7b1107e544ddeeb438aa383272fbd7a5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e21ea47f3c8576144aa9db7c4c5e8f8e, type: 2}
+      objectReference: {fileID: 2100000, guid: a3c4c927f1f01c649a230a1bb863670d, type: 2}
     - target: {fileID: 919132149155446097, guid: 7b1107e544ddeeb438aa383272fbd7a5, type: 3}
       propertyPath: m_Name
       value: proiettile affusolato

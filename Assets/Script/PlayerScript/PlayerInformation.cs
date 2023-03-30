@@ -54,7 +54,6 @@ public class PlayerInformation : MonoBehaviour
     [HideInInspector]
     public bool is_EnergyPickUp;
 
-    
 
 
 
@@ -64,7 +63,7 @@ public class PlayerInformation : MonoBehaviour
     //set Canvas with right information about ammo and about the right weapon equiped on start
     private void Awake()
     {
-
+        
         //Controllo in più
         if (m_instance == null)
             m_instance = this;

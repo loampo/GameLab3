@@ -1,5 +1,284 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &128648763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128648764}
+  - component: {fileID: 128648765}
+  m_Layer: 3
+  m_Name: Point Light (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &128648764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128648763}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.2475586, y: 1.7779312, z: 3.9305649}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5538855227720374499}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &128648765
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128648763}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 8.71
+  m_Range: 15.360718
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &323726068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323726069}
+  - component: {fileID: 323726070}
+  m_Layer: 3
+  m_Name: Point Light (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &323726069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323726068}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.28, y: 8.87, z: 3.9305649}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5538855227720374499}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &323726070
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323726068}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 8
+  m_Range: 15.360718
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!1 &1297651474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1297651475}
+  - component: {fileID: 1297651476}
+  m_Layer: 3
+  m_Name: Point Light (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1297651475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297651474}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.28, y: -5.73, z: 3.9305649}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5538855227720374499}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1297651476
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1297651474}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 8
+  m_Range: 15.360718
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &418507904267599593
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +290,7 @@ GameObject:
   - component: {fileID: 7249660206614450275}
   - component: {fileID: 1523114806528478490}
   - component: {fileID: 2106079094682988712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +371,7 @@ GameObject:
   - component: {fileID: 6291350358529221063}
   - component: {fileID: 5302205723309524610}
   - component: {fileID: 7288341252364678529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2308902694274817015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781117499908669334}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: boss 2 renderizzato
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -245,7 +524,7 @@ GameObject:
   - component: {fileID: 5834314265770273620}
   - component: {fileID: 5491513092492782338}
   - component: {fileID: 8014312627027845462}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,7 +605,7 @@ GameObject:
   - component: {fileID: 5595402055930605264}
   - component: {fileID: 3257324470994866886}
   - component: {fileID: 3814675846406066460}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +684,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 562626670802708567}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +716,7 @@ GameObject:
   - component: {fileID: 6175346428093105247}
   - component: {fileID: 5568804608078144050}
   - component: {fileID: 5842686372265469890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +795,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1658702659364108820}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -547,7 +826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 993196037210904328}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +860,7 @@ GameObject:
   - component: {fileID: 3924180592411768699}
   - component: {fileID: 5366422766641292065}
   - component: {fileID: 6625653255601651846}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +941,7 @@ GameObject:
   - component: {fileID: 7493613740728702171}
   - component: {fileID: 6067679952115625999}
   - component: {fileID: 3099561919101164640}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +1022,7 @@ GameObject:
   - component: {fileID: 3534273098995038609}
   - component: {fileID: 5454508538219802802}
   - component: {fileID: 1234993349083677075}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -822,7 +1101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4151101375033783373}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -852,7 +1131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4151101376663354197}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GunEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -882,7 +1161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4286969929001772728}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +1195,7 @@ GameObject:
   - component: {fileID: 7672777372879347469}
   - component: {fileID: 7672777372879347471}
   - component: {fileID: 7672777372879347468}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: boss 2 non
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1024,7 +1303,7 @@ GameObject:
   - component: {fileID: 2181534893668762918}
   - component: {fileID: 9139164506316011824}
   - component: {fileID: 7426701403412708074}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1105,7 +1384,7 @@ GameObject:
   - component: {fileID: 222689598709416098}
   - component: {fileID: 2293815334084575476}
   - component: {fileID: 4384267655694568096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1186,7 +1465,7 @@ GameObject:
   - component: {fileID: 455917104931237801}
   - component: {fileID: 2209258205921053124}
   - component: {fileID: 213330166160739380}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,7 +1544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6065885884125791137}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: transform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1295,9 +1574,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5538855227720374499}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Boss 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1315,6 +1594,9 @@ Transform:
   m_Children:
   - {fileID: 5428893666453050464}
   - {fileID: 1781117499908669334}
+  - {fileID: 128648764}
+  - {fileID: 323726069}
+  - {fileID: 1297651475}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1329,7 +1611,7 @@ GameObject:
   - component: {fileID: 3997918181351947157}
   - component: {fileID: 5099115137881630444}
   - component: {fileID: 5682075072549903198}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1410,7 +1692,7 @@ GameObject:
   - component: {fileID: 337733938093869617}
   - component: {fileID: 1906635523039735156}
   - component: {fileID: 3946808226078613111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1489,7 +1771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8352589816586940417}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1804,7 @@ GameObject:
   - component: {fileID: 3755486511976038189}
   - component: {fileID: 564137631627647993}
   - component: {fileID: 8710904853991176086}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +1883,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7672777372418150563}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GunEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1631,7 +1913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7672777372902547387}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EnemyWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1945,7 @@ GameObject:
   - component: {fileID: 7128283704783639143}
   - component: {fileID: 1752688014760991556}
   - component: {fileID: 4810707532569815653}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCube3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +2024,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7538711885947489614}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: transform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1772,7 +2054,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4964206680156951010}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1805,7 +2087,7 @@ GameObject:
   - component: {fileID: 7320037825446648973}
   - component: {fileID: 1844751786099722455}
   - component: {fileID: 581965334794791792}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pCylinder4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1884,7 +2166,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6784682063205039358}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: group1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
