@@ -236,6 +236,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc51e944751c9c7428f0d17177cbeba2, type: 3}
   m_PrefabInstance: {fileID: 6089891222252846244}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &7350985178208553251
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6359867849353937397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &1918107655
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -291,7 +304,7 @@ MonoBehaviour:
   m_currentHealth: 20
   m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   m_enemyScorePoints: 100
-  m_maxDistance: 60
+  m_maxDistance: 50
   m_player: {fileID: 0}
   m_patrolRoute: {fileID: 0}
   m_locations: []

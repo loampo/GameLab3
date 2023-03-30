@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class RedEnemy : EnemyBase, IDamageable
 {
-    
+
     public Transform m_patrolRoute;  //the rout for the enemy 
     public List<Transform> m_locations; // location for the enemy 
     private int M_LocationIndex = 0; //location index
@@ -13,22 +13,20 @@ public class RedEnemy : EnemyBase, IDamageable
     public List<GameObject> drops = new List<GameObject>();
     private Vector3 m_Offset = new Vector3(0f, 0f, 5f);
     //private Vector3 m_Offset2 = new Vector3(0f, 5f, 0f);
-    
-    
-    
+
+
+
     //public float maxRotate;
 
     public float speedUpDown = 1;
     public float distanceUpDown = 1;
 
 
-    private bool m_isLock;
-
 
     private void Start()
     {
         m_agent.GetComponent<NavMeshAgent>();
-        
+
         InitializePatrolRoute();
         MoveToNextPatrolLocation();
     }
@@ -36,7 +34,7 @@ public class RedEnemy : EnemyBase, IDamageable
     //Dedicated to interrupting his Patrol to come and disturb the player while in the area
     private void Update()
     {
-        
+
         //rotate around player
         //Vector3 mov = new Vector3(transform.position.x, Mathf.Sin(speedUpDown * Time.time) * distanceUpDown, transform.position.z) + m_Offset2; //used with sin for swinging
         //transform.position = mov;
@@ -46,24 +44,19 @@ public class RedEnemy : EnemyBase, IDamageable
 
         if (distanceToPlayer < m_maxDistance)
         {
+
             transform.LookAt(m_player); //enemy always look to the player
             m_agent.destination = playerPosition;
             //transform.RotateAround(playerPosition, Vector3.up, maxRotate * Time.deltaTime);
             m_EnemyWeapon.ShootingBase(); //shooting
-            m_isLock = true;
+
         }
         else if (m_agent.remainingDistance < 0.2f && !m_agent.pathPending && distanceToPlayer > m_maxDistance)
-        {           
-                //UIManager.m_instance.m_lockImage.SetActive(false);
-                MoveToNextPatrolLocation();
-        }
-        if (!m_isLock)
         {
-            UIManager.m_instance.m_lockImage.SetActive(false);
-        }
-        else
-        {
-            UIManager.m_instance.m_lockImage.SetActive(true);
+
+            MoveToNextPatrolLocation();
+           
+
         }
 
     }
@@ -89,7 +82,7 @@ public class RedEnemy : EnemyBase, IDamageable
 
 
 
-    public override void  DamageBullet(int damageAmount)
+    public override void DamageBullet(int damageAmount)
     {
         //subtract damage amount when Damage function is called
         m_currentHealth -= damageAmount;
@@ -103,6 +96,8 @@ public class RedEnemy : EnemyBase, IDamageable
             GameObject a = Instantiate(m_fire, transform.position, Quaternion.identity); //Instantiate the animation 
             Destroy(a, 2f); //destroy the animation after 2 seconds
             GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 
+            
+
         }
     }
 

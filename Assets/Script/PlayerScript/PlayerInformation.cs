@@ -54,7 +54,7 @@ public class PlayerInformation : MonoBehaviour
     [HideInInspector]
     public bool is_EnergyPickUp;
 
-
+    
 
 
     //----------------------------------------------------------Singleton
@@ -323,12 +323,24 @@ public class PlayerInformation : MonoBehaviour
         {
 
             if (m_energy < 100) Invoke("ChargeStation",0f);
+ 
+        }
+        if (other.gameObject.CompareTag(Constants.ENEMY))
+        {
             
-            
-
+            UIManager.m_instance.m_lockImage.SetActive(true);
 
         }
+        else
+        {
+            
+            UIManager.m_instance.m_lockImage.SetActive(false);
+        }
+        
+
     }
+
+    
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromLaserToVulcan()

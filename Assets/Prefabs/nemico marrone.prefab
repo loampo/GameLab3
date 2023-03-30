@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8142837355835141744}
   - component: {fileID: 8142837355835141759}
   - component: {fileID: 8142837355835141758}
+  - component: {fileID: 1768232591450362101}
   m_Layer: 0
   m_Name: nemico marrone
   m_TagString: Enemy
@@ -250,7 +251,7 @@ MonoBehaviour:
   m_currentHealth: 40
   m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   m_enemyScorePoints: 100
-  m_maxDistance: 60
+  m_maxDistance: 50
   m_player: {fileID: 0}
   m_patrolRoute: {fileID: 0}
   m_locations: []
@@ -262,6 +263,19 @@ MonoBehaviour:
   - {fileID: 8424144058544679828, guid: a0d83d1e762f9b7468f35c75c9aff638, type: 3}
   speedUpDown: 1
   distanceUpDown: 0.2
+--- !u!135 &1768232591450362101
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142837355835141745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Center: {x: 0, y: 0, z: -0.000000029802322}
 --- !u!1 &8142837356227060481
 GameObject:
   m_ObjectHideFlags: 0
