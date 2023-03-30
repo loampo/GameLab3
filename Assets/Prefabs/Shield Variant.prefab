@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: beda32473f92fc14ba54bcf948237966, type: 3}
       propertyPath: m_Name
-      value: Shield
+      value: Shield Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: beda32473f92fc14ba54bcf948237966, type: 3}
       propertyPath: m_TagString
@@ -103,7 +103,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0, g: 0, b: 1, a: 1}
-  m_Intensity: 20
+  m_Intensity: 100
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

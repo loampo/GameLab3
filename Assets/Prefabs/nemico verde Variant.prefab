@@ -291,7 +291,7 @@ MonoBehaviour:
   m_currentHealth: 20
   m_fire: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   m_enemyScorePoints: 100
-  m_maxDistance: 50
+  m_maxDistance: 60
   m_player: {fileID: 0}
   m_patrolRoute: {fileID: 0}
   m_locations: []
