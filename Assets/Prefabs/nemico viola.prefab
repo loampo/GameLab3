@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736696856096003101}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.0049973, y: -0.304, z: 1.296}
+  m_LocalPosition: {x: -0.426, y: -0.304, z: 1.355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2330454174485738903}
@@ -164,11 +164,11 @@ GameObject:
   - component: {fileID: 2330454174485738903}
   - component: {fileID: 1727328559065954866}
   - component: {fileID: 3466719917990186744}
-  - component: {fileID: 8109936715954692758}
   - component: {fileID: 592508174917706868}
   - component: {fileID: 1736696855433760194}
   - component: {fileID: 1736696855433760196}
   - component: {fileID: 2872688275611432389}
+  - component: {fileID: 2980635277378949247}
   m_Layer: 0
   m_Name: nemico viola
   m_TagString: Enemy
@@ -242,19 +242,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8109936715954692758
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3106567943807053613}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 30
-  m_Center: {x: -1.0367942, y: -0.25651157, z: 0.30812725}
 --- !u!64 &592508174917706868
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -337,3 +324,16 @@ MonoBehaviour:
   - {fileID: 2263754720478777995, guid: b3c5e144b6b76a842aef2c85f6b6279b, type: 3}
   speedUpDown: 1
   distanceUpDown: 0.2
+--- !u!65 &2980635277378949247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3106567943807053613}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 41.780064, y: 5.3223667, z: 57.156006}
+  m_Center: {x: -5.3267345, y: -0.7266989, z: 9.384285}

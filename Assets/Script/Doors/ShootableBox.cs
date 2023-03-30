@@ -25,3 +25,5 @@ interface IShootableBoox
 {
     public void DamageBulletDoor(int damageAmount);
 }
+
+

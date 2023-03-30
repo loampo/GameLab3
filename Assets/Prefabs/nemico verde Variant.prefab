@@ -236,8 +236,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cc51e944751c9c7428f0d17177cbeba2, type: 3}
   m_PrefabInstance: {fileID: 6089891222252846244}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &7350985178208553251
-SphereCollider:
+--- !u!65 &4729853965979275755
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -247,8 +247,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 30
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 24.786865, y: 3.2043743, z: 35.67269}
+  m_Center: {x: -0.2135582, y: 1.1072626, z: 3.2856255}
 --- !u!195 &1918107655
 NavMeshAgent:
   m_ObjectHideFlags: 0

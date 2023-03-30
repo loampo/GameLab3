@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
             BackCamera();
         }
 
-        if (Input.GetKeyDown(KeyCode.P) && !m_cameraBackActive && !m_mapCameraActive && Time.timeScale == 1)
+        if (Input.GetKeyDown(KeyCode.Escape) && !m_cameraBackActive && !m_mapCameraActive && Time.timeScale == 1)
         {
             Pause();
         }
