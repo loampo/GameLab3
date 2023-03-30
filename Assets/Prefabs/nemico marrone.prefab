@@ -104,11 +104,11 @@ GameObject:
   - component: {fileID: 8142837355835141757}
   - component: {fileID: 8142837355835141756}
   - component: {fileID: 8142837355835141746}
+  - component: {fileID: 1768232591450362101}
   - component: {fileID: 8142837355835141747}
   - component: {fileID: 8142837355835141744}
   - component: {fileID: 8142837355835141759}
   - component: {fileID: 8142837355835141758}
-  - component: {fileID: 1768232591450362101}
   m_Layer: 0
   m_Name: nemico marrone
   m_TagString: Enemy
@@ -182,6 +182,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &1768232591450362101
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8142837355835141745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: -0.000000029802322}
 --- !u!64 &8142837355835141747
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -215,7 +228,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.3286604
-  m_BaseOffset: 5
+  m_BaseOffset: 3
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8142837355835141759
@@ -264,19 +277,6 @@ MonoBehaviour:
   - {fileID: 2263754720478777995, guid: b3c5e144b6b76a842aef2c85f6b6279b, type: 3}
   speedUpDown: 1
   distanceUpDown: 0.2
---- !u!135 &1768232591450362101
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8142837355835141745}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 50
-  m_Center: {x: 0, y: 0, z: -0.000000029802322}
 --- !u!1 &8142837356227060481
 GameObject:
   m_ObjectHideFlags: 0

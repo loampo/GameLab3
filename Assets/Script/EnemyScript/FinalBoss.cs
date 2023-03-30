@@ -16,14 +16,10 @@ public class FinalBoss : EnemyBase, IDamageable
 
             transform.LookAt(m_player); //enemy always look to the player
             m_EnemyWeapon.ShootingBase(); //shooting system
-            UIManager.m_instance.m_lockImage.SetActive(true);
             if (m_currentHealth <= 0) GameManager.m_instance.bossDeath = true;
 
         }
-        else
-        {
-            UIManager.m_instance.m_lockImage.SetActive(false);
-        }
+        
         
 
     }
@@ -43,6 +39,7 @@ public class FinalBoss : EnemyBase, IDamageable
             GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 
             GameManager.m_instance.bossDeath = true;
             Destroy(fakeBoss);
+            UIManager.m_instance.m_lockImage.SetActive(false);
         }
     }
 }

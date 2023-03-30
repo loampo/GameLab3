@@ -9237,7 +9237,7 @@ RectTransform:
   - {fileID: 1988825567}
   - {fileID: 1641143306}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -11928,7 +11928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8142837355835141757, guid: b1c6e42e38410694999094ef6d737d0c, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8142837355835141757, guid: b1c6e42e38410694999094ef6d737d0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17713,7 +17713,7 @@ RectTransform:
   m_Children:
   - {fileID: 1167971919}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21193,10 +21193,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8142837355835141744, guid: b1c6e42e38410694999094ef6d737d0c, type: 3}
-      propertyPath: m_BaseOffset
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8142837355835141745, guid: b1c6e42e38410694999094ef6d737d0c, type: 3}
       propertyPath: m_Name
       value: nemico marrone (2)
@@ -22399,7 +22395,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1080740124
 Mesh:
@@ -30190,7 +30186,6 @@ MonoBehaviour:
   m_loseScene: {fileID: 1701838581}
   m_loseScene0Live: {fileID: 1552105339}
   m_winScene: {fileID: 1936213558}
-  ciao: {fileID: 0}
   canvas: {fileID: 1570142817}
 --- !u!1001 &1431213972
 PrefabInstance:
@@ -33015,7 +33010,7 @@ RectTransform:
   - {fileID: 1481888734}
   - {fileID: 1528921681}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -39984,7 +39979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2330454174485738903, guid: 29df3cf21d19e7b45a81ef18ff1d6fdb, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 2330454174485738903, guid: 29df3cf21d19e7b45a81ef18ff1d6fdb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -46606,6 +46601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1183934537, guid: 5bfe9a4f6f9883440b1472167c38be28, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5538855227720374496, guid: 5bfe9a4f6f9883440b1472167c38be28, type: 3}
       propertyPath: m_Name
       value: Boss

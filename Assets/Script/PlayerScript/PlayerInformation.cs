@@ -331,16 +331,22 @@ public class PlayerInformation : MonoBehaviour
             UIManager.m_instance.m_lockImage.SetActive(true);
 
         }
-        else
-        {
-            
-            UIManager.m_instance.m_lockImage.SetActive(false);
-        }
+       
+       
         
 
     }
 
-    
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(Constants.ENEMY))
+        {
+
+            UIManager.m_instance.m_lockImage.SetActive(false);
+
+        }
+    }
+
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromLaserToVulcan()

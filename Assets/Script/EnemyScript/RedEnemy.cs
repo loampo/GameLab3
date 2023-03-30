@@ -91,12 +91,15 @@ public class RedEnemy : EnemyBase, IDamageable
         if (m_currentHealth <= 0)
         {
             int witchDrops = Random.Range(0, drops.Count);
+            if (Random.Range(1, 100) > 10)
+            {
+                GameObject b = Instantiate(drops[witchDrops], transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
-            GameObject b = Instantiate(drops[witchDrops], transform.position, Quaternion.identity);
             GameObject a = Instantiate(m_fire, transform.position, Quaternion.identity); //Instantiate the animation 
             Destroy(a, 2f); //destroy the animation after 2 seconds
             GameManager.m_instance.m_score += m_enemyScorePoints; //increment scoore 
-            
+            UIManager.m_instance.m_lockImage.SetActive(false);
 
         }
     }
