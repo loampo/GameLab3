@@ -47,12 +47,16 @@ public class HominMissleBullet : Bullet
         target = null;
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.layer != 3) continue;
-            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance )
+            
+            if (!target && Vector3.Distance(transform.position, enemy.transform.position) < focusDistance)
             {
                 target = enemy.transform;
             }
-            else
+            else if (!target && Vector3.Distance(transform.position, enemy.transform.position) > focusDistance)
+            {
+                this.GetComponent<Rigidbody>().velocity = transform.forward * speed;
+            }
+            else 
             {
                 float targetDistance = Vector3.Distance(transform.position, target.transform.position);
                 float enemyDistance = Vector3.Distance(transform.position, enemy.transform.position);
@@ -64,6 +68,10 @@ public class HominMissleBullet : Bullet
                 }
 
             }
+            
+            
+
+
         }
     }
 
@@ -106,8 +114,16 @@ public class HominMissleBullet : Bullet
             collision.transform.GetComponent<ShootableBox>().DamageBulletDoor(m_damage);
             Destroy(gameObject);
         }
+        
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag(Constants.ASTRONAUT))
+        {
+            Destroy(gameObject);
+        }
+    }
 
     //protected override void ColorBullet()
     //{

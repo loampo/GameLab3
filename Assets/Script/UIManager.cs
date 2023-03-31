@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     public GameObject m_loseScene0Live;
     public GameObject m_winScene;
 
+    
 
     [SerializeField] private Canvas canvas;
 

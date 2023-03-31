@@ -34,9 +34,17 @@ public class FirstBullet : Bullet
             collision.transform.GetComponent<ShootableBox>().DamageBulletDoor(m_damage);
             Destroy(gameObject);
         }
+       
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag(Constants.ASTRONAUT))
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
 }

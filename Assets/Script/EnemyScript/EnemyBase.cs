@@ -13,17 +13,7 @@ public abstract class EnemyBase : MonoBehaviour
     public Transform m_player;
 
 
-    private void OnBecameVisible()
-    {
-        gameObject.layer = 3; //visible in camera
-
-    }
-
-
-    private void OnBecameInvisible()
-    {
-        gameObject.layer = 0; //non visible in camera
-    }
+    
 
     private void Awake()
     {

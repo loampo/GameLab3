@@ -28,7 +28,7 @@ public class EnemyWeapon : MonoBehaviour
 
    
     //shooting system for the enemy 
-    public virtual void Shooting() 
+    public virtual void ShootingBase() 
     {
         if (m_ReadyToShoot) //first controll 
         {
@@ -36,10 +36,11 @@ public class EnemyWeapon : MonoBehaviour
             GameObject bullet = Instantiate(m_bulletPrefabs, m_gunEndWeapon.position, transform.rotation); //Instantiate bullet
             bullet.GetComponent<Rigidbody>().velocity = transform.forward * m_speedX; //bullet velocity 
             Invoke("ResetShooting", m_fireRate); //reset shooting with fireRate
-
+            
         }
     }
 
+    
     //resetShooting
     protected virtual void ResetShooting()
     {

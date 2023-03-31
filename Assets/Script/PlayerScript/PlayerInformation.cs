@@ -57,14 +57,13 @@ public class PlayerInformation : MonoBehaviour
     
 
 
-
     //----------------------------------------------------------Singleton
     public static PlayerInformation m_instance;
 
     //set Canvas with right information about ammo and about the right weapon equiped on start
     private void Awake()
     {
-
+        
         //Controllo in più
         if (m_instance == null)
             m_instance = this;
@@ -324,12 +323,30 @@ public class PlayerInformation : MonoBehaviour
         {
 
             if (m_energy < 100) Invoke("ChargeStation",0f);
+ 
+        }
+        if (other.gameObject.CompareTag(Constants.ENEMY))
+        {
             
-            
+            UIManager.m_instance.m_lockImage.SetActive(true);
 
+        }
+       
+       
+        
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag(Constants.ENEMY))
+        {
+
+            UIManager.m_instance.m_lockImage.SetActive(false);
 
         }
     }
+
 
     //i use this funcion for Switching the Canvas information about ammo 
     public void SwitchAmmoFromLaserToVulcan()

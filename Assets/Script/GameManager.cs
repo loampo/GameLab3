@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public Camera m_mainCamera;
     public Camera m_cameraBack;
     public Camera m_mapCamera;
+    private bool m_mapCameraActive = false;
+    private bool m_cameraBackActive = false;
 
     [SerializeField] private TextMeshProUGUI ScoreText;
     [SerializeField] private TextMeshProUGUI ScoreFinalText;
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
     public GameObject m_player;
 
     public bool bossDeath;
+
+    public PlayerShip playerShip;
 
     public static GameManager m_instance;
 
@@ -36,41 +40,31 @@ public class GameManager : MonoBehaviour
 
     }
 
-   
+    private void Start()
+    {
+        playerShip.GetComponent<PlayerShip>();
+    }
+
     private void Update()
     {
         ScoreText.text = m_score.ToString();
         ScoreFinalText.text = m_score.ToString();
-        if (Input.GetKey(KeyCode.R)) //press key
+
+
+        if (Input.GetKeyDown(KeyCode.R) && !m_mapCameraActive && Time.timeScale == 1) //press key
         {
-            m_mainCamera.enabled = false;
-            m_cameraBack.enabled = true;
-            UIManager.m_instance.SwitchFromMainCameraToBack();
-        }else
-        {
-            m_mainCamera.enabled = true;
-            m_cameraBack.enabled = false;
-            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+            BackCamera();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !m_cameraBackActive && !m_mapCameraActive && Time.timeScale == 1)
         {
             Pause();
         }
-        if (Input.GetKey(KeyCode.Tab))
-        {
 
-            m_mainCamera.enabled = false;
-            m_mapCamera.enabled = true;
-            UIManager.m_instance.SwitchFromMainCameraToBack();
-        }
-        else
+        if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1)
         {
-            m_mainCamera.enabled = true;
-            m_mapCamera.enabled = false;
-            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+            MapCamera();
         }
-
     }
 
 
@@ -83,7 +77,10 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = m_CursorLockModeLocked;
             Cursor.visible =m_CursorVisibleFalse;
             m_player.SetActive(true);
-            m_mainCamera.enabled = false;
+            m_mainCamera.enabled = true;
+            m_mapCameraActive = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+            
         }
     }
 
@@ -103,7 +100,7 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = m_CursorLockModeNone; //Impedisce al cursore di uscire dallo schermo
         Cursor.visible = m_CursorVisibleTrue; // Nasconde il cursore del mouse
         m_player.SetActive(false);
-        m_mainCamera.enabled = true;
+        //m_mainCamera.enabled = true;
     }
 
     public void Retry()
@@ -155,7 +152,52 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-   
+   private void MapCamera()
+    {
+        if (!m_mapCameraActive)
+        {
+            playerShip.enabled = false;
+            m_mapCameraActive = true;
+            m_mapCamera.enabled = true;
+            m_mainCamera.enabled = false;
+            m_cameraBack.enabled = false;
+            UIManager.m_instance.SwitchFromMainCameraToBack();
+        }
+        else
+        {
+            playerShip.enabled = true;
+            m_mapCameraActive = false;
+            m_cameraBackActive = false;
+            m_mapCamera.enabled = false;
+            m_mainCamera.enabled = true;
+            m_cameraBack.enabled = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+        }
+    }
+
+    private void BackCamera()
+    {
+        if (!m_cameraBackActive)
+        {
+            m_cameraBackActive = true;
+            m_cameraBack.enabled = true;
+            m_mainCamera.enabled = false;
+            m_mapCamera.enabled = false;
+            UIManager.m_instance.SwitchFromMainCameraToBack();
+        }
+        else
+        {
+            m_cameraBackActive = false;
+            m_cameraBack.enabled = false;
+            m_mainCamera.enabled = true;
+            m_mapCamera.enabled = false;
+            UIManager.m_instance.SwitchFromBackCameraToMainCamera();
+        }
+    }
+
+
+
+
 
 
 }
